@@ -2,7 +2,7 @@
 /**
 * 
 */
-class Member_model extends CI_Model
+class Penghuni_model extends CI_Model
 {
 	public $member			= 'member';
 	public $id				= 'id_member';

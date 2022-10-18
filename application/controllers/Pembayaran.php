@@ -1,13 +1,13 @@
 <?php 
-class Sewa extends CI_Controller
+class Pembayaran extends CI_Controller
 {
 	
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('Sewa_model');
-		$this->load->model('Member_model');
-		$this->load->model('Hunian_model');
+		$this->load->model('Pembayaran_model');
+		$this->load->model('Penghuni_model');
+		$this->load->model('Kamar_model');
 	}
 
 	/* MEMBER-KONFIRMASI PEMBAYARAN*/
@@ -133,11 +133,11 @@ public function download($id){
   }
 }
 
-function delete($id)
-	{
-		$this->Sewa_model->hapus_data($id);
-		$this->session->set_flashdata("pesan", "<div class=\"col-md-12\"><div class=\"alert alert-danger\" id=\"alert\">Data berhasil dihapus!!</div></div>");
-        redirect('sewa');
-	}
+// function delete($id)
+// 	{
+// 		$this->Sewa_model->hapus_data($id);
+// 		$this->session->set_flashdata("pesan", "<div class=\"col-md-12\"><div class=\"alert alert-danger\" id=\"alert\">Data berhasil dihapus!!</div></div>");
+//         redirect('sewa');
+// 	}
 
  ?>

@@ -6,8 +6,8 @@ class Komplain extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('Komplain_model');
-		$this->load->model('Member_model');
-		$this->load->model('Hunian_model');
+		$this->load->model('Penghuni_model');
+		$this->load->model('Kamar_model');
 	}
 
 
@@ -49,7 +49,7 @@ class Komplain extends CI_Controller
 	function index()
 	{
 		$data['komplain'] = $this->Komplain_model->ambil_data();
-		$this->load->view('Admin/Komplain_list',$data);
+		$this->load->view('admin/data_komplain/index',$data);
 	}
 
 	public function download($id){

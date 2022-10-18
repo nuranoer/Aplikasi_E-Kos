@@ -1,5 +1,5 @@
 <?php 
-class Hunian extends CI_Controller
+class Kamar extends CI_Controller
 {
 	var $limit=10;
 	var $offset=10;
@@ -7,15 +7,15 @@ class Hunian extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('Hunian_model');
+		$this->load->model('Kamar_model');
 		$this->load->helper(array('url'));
 	}
 
 	function index($page=NULL,$offset='',$key=NULL)
 	{
 		//print_r($this->prodi_model->ambil_data());
-		$data['hunian'] = $this->Hunian_model->ambil_data();
-		$this->load->view('Admin/Hunian_list',$data);
+		$data['kamar'] = $this->Kamar_model->ambil_data();
+		$this->load->view('admin/data_kamar/index',$data);
 	}
 
 	function tambah()
@@ -30,7 +30,7 @@ class Hunian extends CI_Controller
 			'id_hunian' 		=> set_value('id_hunian'),
 			'button' 			=> 'Tambah'
 		);
-		$this->load->view('Admin/Hunian_form',$data);
+		$this->load->view('admin/data_kamar/create',$data);
 	}
 
 	function tambah_aksi()
@@ -87,14 +87,14 @@ class Hunian extends CI_Controller
 
     function delete($id)
     {
-    	$this->Hunian_model->hapus_data($id);
+    	$this->Kamar_model->hapus_data($id);
     	$this->session->set_flashdata("pesan", "<div class=\"col-md-12\"><div class=\"alert alert-danger\" id=\"alert\">Data berhasil dihapus!!</div></div>");
-    	redirect('hunian');
+    	redirect('kamar');
     }
 
     function update($id)
     {
-    	$hunian = $this->Hunian_model->ambil_data_id($id);
+    	$hunian = $this->Kamar_model->ambil_data_id($id);
     	$data = array(
     		'aksi' 				=> site_url('hunian/update_aksi'),
     		'nama' 				=> set_value('nama',$hunian->nama_hunian),
@@ -158,7 +158,7 @@ class Hunian extends CI_Controller
         'harga_hunian'          => $this->input->post('harga')
     );
       $id_hunian = $this->input->post('id_hunian');
-      $this->Hunian_model->edit_data($id_hunian,$data);
+      $this->Kamar_model->edit_data($id_hunian,$data);
       redirect('hunian');
   }
 }

@@ -17,7 +17,7 @@ class Home extends CI_Controller
 			redirect('/');
 		}
 
-		$this->load->view('Admin/Home');
+		$this->load->view('admin/beranda');
         
     } 
 }

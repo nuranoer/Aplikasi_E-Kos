@@ -2,7 +2,7 @@
 /**
 * 
 */
-class Sewa_model extends CI_Model
+class Pembayaran_model extends CI_Model
 {
 	public $sewa		= 'sewa';
 	public $id			= 'id_sewa';

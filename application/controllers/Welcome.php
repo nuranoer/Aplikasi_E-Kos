@@ -6,9 +6,9 @@ class Welcome extends CI_Controller {
 function __construct()
 {
 	parent::__construct();
-	$this->load->model('Hunian_model');
-	$this->load->model('Member_model');
-	$this->load->model('Sewa_model');
+	$this->load->model('Kamar_model');
+	$this->load->model('Penghuni_model');
+	$this->load->model('Pembayaran_model');
 	$this->load->helper(array('url'));
 }
 	/**
@@ -33,8 +33,8 @@ function __construct()
 
 	public function info()
 	{
-		$data['hunian'] = $this->Hunian_model->ambil_data();
-		$this->load->view('Member/Info',$data);
+		$data['kamar'] = $this->Kamar_model->ambil_data();
+		$this->load->view('pengunjung/info',$data);
 
 	}
 
@@ -52,7 +52,7 @@ function __construct()
 
 	public function regis()
 	{
-		$this->load->view('Member/Regis');
+		$this->load->view('auth/register');
 	}
 
 	public function index_member()
@@ -65,13 +65,13 @@ function __construct()
 		$this->load->view('Member/Pemesanan');
 	}
 
-		public function status_sewa()
+		public function status_pembayaran()
 	{
-		$data['sewa']= $this->Sewa_model->ambil_data();
+		$data['bayar']= $this->Pembayaran_model->ambil_data();
 		$this->load->view('Member/Status_sewa',$data);
 	}
 
-		public function sewa()
+		public function bayar()
 	{
 		$this->load->view('Member/Sewa');
 	}

@@ -2,7 +2,7 @@
 /**
 * 
 */
-class Hunian_model extends CI_Model
+class Kamar_model extends CI_Model
 {
 	public $admin			= 'admin';
 	public $hunian			= 'hunian';

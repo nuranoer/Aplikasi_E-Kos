@@ -8,7 +8,7 @@ class Login extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model('Hunian_model');
+        $this->load->model('Kamar_model');
     }
 
     public function index()
@@ -20,11 +20,11 @@ class Login extends CI_Controller
 		
 		if(!$this->input->post()) //jika tidak ada input data post maka akan ke halaman login
 		{
-			$this->load->view('Login');
+			$this->load->view('auth/loginadmin');
 		}
 		else
 		{
-			$cek_login = $this->Hunian_model->cek_login(
+			$cek_login = $this->Kamar_model->cek_login(
 				$this->input->post('username'),
 				$this->input->post('password')
 				);

@@ -8,7 +8,7 @@ class LoginMember extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model('Member_model');
+        $this->load->model('Penghuni_model');
     }
 
     public function index()
@@ -20,7 +20,7 @@ class LoginMember extends CI_Controller
 		
 		if(!$this->input->post()) //jika tidak ada input data post maka akan ke halaman login
 		{
-			$this->load->view('Member/Login_member');
+			$this->load->view('auth/login');
 		}
 		else
 		{
