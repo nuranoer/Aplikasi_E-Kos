@@ -38,9 +38,11 @@ $routes->set404Override();
 $routes->get('/', 'Pengunjung::index');
 $routes->get('login','Login::index');
 $routes->get('loginadmin', 'Login::index2');
+$routes->get('dashboard', 'PageController::index');
+
 
 $routes->group('admin', function($routes){
-    $routes->get('/', 'Admin::index');
+    $routes->get('/', 'PageController::index');
 
     //Routes Kamar
 	$routes->get('kamar', 'Kamar::index');
