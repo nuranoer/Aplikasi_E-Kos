@@ -6,6 +6,6 @@ class Pengunjung extends BaseController
 {
     public function index()
     {
-        return view('pengunjung/beranda');
+        return view('pengunjung/menu/beranda');
     }
 }
