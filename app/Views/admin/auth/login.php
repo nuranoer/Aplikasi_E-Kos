@@ -1,7 +1,6 @@
-<?= $this->extend('auth/template/index'); ?>
+<?= $this->extend('admin/auth/template/header'); ?>
 
 <?= $this->section('content'); ?>
-
 <body>
     <div id="auth">
         
@@ -11,16 +10,10 @@
             <div class="auth-logo">
                 <a href="index.html"><img src="<?= base_url() ?>/admin/assets/images/logo/logo.svg" alt="Logo"></a>
             </div>
-            <h1 class="auth-title">Registrasi Akun</h1>
+            <h1 class="auth-title">Log in Admin</h1>
             <p class="auth-subtitle mb-5">Kost Annisa</p>
 
-            <form action="index.html">
-                <div class="form-group position-relative has-icon-left mb-4">
-                    <input type="text" class="form-control form-control-xl" name="email" placeholder="Email">
-                    <div class="form-control-icon">
-                        <i class="bi bi-envelope"></i>
-                    </div>
-                </div>
+            <form role="form" method="post" action="">                
                 <div class="form-group position-relative has-icon-left mb-4">
                     <input type="text" class="form-control form-control-xl" name="username" placeholder="Username">
                     <div class="form-control-icon">
@@ -33,12 +26,8 @@
                         <i class="bi bi-shield-lock"></i>
                     </div>
                 </div>
-                <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Sign Up</button>
+                <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Log in</button>
             </form>
-            <div class="text-center mt-5 text-lg fs-4">
-                <p class='text-gray-600'>Already have an account? <a href="<?php echo base_url()."Welcome/login_member";?>" class="font-bold">Log
-                        in</a>.</p>
-            </div>
         </div>
     </div>
     <div class="col-lg-7 d-none d-lg-block">

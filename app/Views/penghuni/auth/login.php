@@ -1,4 +1,4 @@
-<?= $this->extend('auth/template/index'); ?>
+<?= $this->extend('penghuni/auth/template/header'); ?>
 
 <?= $this->section('content'); ?>
 
@@ -32,7 +32,7 @@
             <div class="text-center mt-5 text-lg fs-4">
                 <p class="text-gray-600">Don't have an account? <a href="<?php echo base_url()."Welcome/Regis";?>" class="font-bold">Sign
                         up</a>.</p><br>
-                <p class="text-gray-600">Login Sebagai Admin <a href="<?php echo base_url()."Login";?>" class="font-bold">Log In</a>.</p>
+                <p class="text-gray-600">Login Sebagai Admin <a href="<?= base_url('/loginadmin') ?>" class="font-bold">Log In</a>.</p>
             </div>
         </div>
     </div>
