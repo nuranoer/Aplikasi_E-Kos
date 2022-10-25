@@ -36,7 +36,8 @@ class Filters extends BaseConfig
      */
     public $globals = [
         'before' => [
-            // 'honeypot',
+             'honeypot',
+             //'login',
             // 'csrf',
             // 'invalidchars',
             
@@ -72,5 +73,7 @@ class Filters extends BaseConfig
      *
      * @var array
      */
-    public $filters = [];
+    public $filters = [
+        'login' => ['before' => ['admin', 'penghuni']],
+    ];
 }
