@@ -20,9 +20,9 @@
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
                                         <li>
-                                            <h6 class="dropdown-header">Mail</h6>
+                                            <h6 class="dropdown-header">Account</h6>
                                         </li>
-                                        <li><a class="dropdown-item" href="#">No new mail</a></li>
+                                        <li><a class="dropdown-item" href="#">Logout</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item dropdown me-3">
