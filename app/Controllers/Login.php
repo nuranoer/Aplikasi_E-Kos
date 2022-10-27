@@ -20,6 +20,7 @@ class Login extends BaseController
     {
         echo view('penghuni/auth/login');
     }
+    
     public function index2()
     {
         echo view('admin/auth/login');

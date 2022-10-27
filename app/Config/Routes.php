@@ -36,64 +36,64 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Pengunjung::index');
-$routes->get('login','Login::index');
+// $routes->get('login','Login::index');
 $routes->get('loginadmin', 'Admin::loginadmin');
 $routes->get('dashboard', 'Admin::index');
 
 
-$routes->group('admin', function($routes){
-    $routes->get('/', 'PageController::index');
+// $routes->group('admin', function($routes){
+//     $routes->get('/', 'PageController::index');
 
-    //Routes Kamar
-	$routes->get('kamar', 'Kamar::index');
-	$routes->get('kamar/(:segment)/preview', 'Kamar::preview/$1');
-    $routes->add('kamar/new', 'Kamar::new');
-    $routes->add('kamar/store', 'Kamar::store');
-	$routes->add('kamar/(:segment)/edit', 'Kamar::edit/$1');
-	$routes->add('kamar/(:segment)/update', 'Kamar::update/$1');
-	$routes->get('kamar/(:segment)/delete', 'Kamar::delete/$1');
+//     //Routes Kamar
+// 	$routes->get('kamar', 'Kamar::index');
+// 	$routes->get('kamar/(:segment)/preview', 'Kamar::preview/$1');
+//     $routes->add('kamar/new', 'Kamar::new');
+//     $routes->add('kamar/store', 'Kamar::store');
+// 	$routes->add('kamar/(:segment)/edit', 'Kamar::edit/$1');
+// 	$routes->add('kamar/(:segment)/update', 'Kamar::update/$1');
+// 	$routes->get('kamar/(:segment)/delete', 'Kamar::delete/$1');
 
-    //Route Penghuni
-    $routes->get('penghuni', 'Penghuni::index');
-	$routes->get('penghuni/(:segment)/preview', 'Penghuni::preview/$1');
-	$routes->add('penghuni/(:segment)/edit', 'Penghuni::edit/$1');
-	$routes->add('penghuni/(:segment)/update', 'Penghuni::update/$1');
-	$routes->get('penghuni/(:segment)/delete', 'Penghuni::delete/$1');
+//     //Route Penghuni
+//     $routes->get('penghuni', 'Penghuni::index');
+// 	$routes->get('penghuni/(:segment)/preview', 'Penghuni::preview/$1');
+// 	$routes->add('penghuni/(:segment)/edit', 'Penghuni::edit/$1');
+// 	$routes->add('penghuni/(:segment)/update', 'Penghuni::update/$1');
+// 	$routes->get('penghuni/(:segment)/delete', 'Penghuni::delete/$1');
 
-    //Route Pemesanan
-    $routes->get('pemesanan', 'Pemesanan::index');
-	$routes->get('pemesanan/(:segment)/preview', 'Pemesanan::preview/$1');
-	$routes->get('pemesanan/(:segment)/delete', 'Pemesanan::delete/$1');
+//     //Route Pemesanan
+//     $routes->get('pemesanan', 'Pemesanan::index');
+// 	$routes->get('pemesanan/(:segment)/preview', 'Pemesanan::preview/$1');
+// 	$routes->get('pemesanan/(:segment)/delete', 'Pemesanan::delete/$1');
 
-    //Route Pembayaran
-    $routes->get('pembayaran', 'Pembayaran::index');
-	$routes->get('pembayaran/(:segment)/preview', 'Pembayaran::preview/$1');
-	$routes->get('pembayaran/(:segment)/delete', 'Pembayaran::delete/$1');
+//     //Route Pembayaran
+//     $routes->get('pembayaran', 'Pembayaran::index');
+// 	$routes->get('pembayaran/(:segment)/preview', 'Pembayaran::preview/$1');
+// 	$routes->get('pembayaran/(:segment)/delete', 'Pembayaran::delete/$1');
 
-    //Route Komplin
-    $routes->get('komplain', 'Komplain::index');
-	$routes->get('komplain/(:segment)/preview', 'Komplain::preview/$1');
-	$routes->get('komplain/(:segment)/delete', 'Komplain::delete/$1');
+//     //Route Komplin
+//     $routes->get('komplain', 'Komplain::index');
+// 	$routes->get('komplain/(:segment)/preview', 'Komplain::preview/$1');
+// 	$routes->get('komplain/(:segment)/delete', 'Komplain::delete/$1');
 
-});
+// });
 
-$routes->group('penghuni', function($routes){
-    $routes->get('/', 'Penghuni::index');
+// $routes->group('penghuni', function($routes){
+//     $routes->get('/', 'Penghuni::index');
 
-    //Route Pemesanan
-    $routes->add('pemesanan/new', 'Pemesanan::new');
-    $routes->add('pemesanan/store', 'Pemesanan::store');
+//     //Route Pemesanan
+//     $routes->add('pemesanan/new', 'Pemesanan::new');
+//     $routes->add('pemesanan/store', 'Pemesanan::store');
 
 
-    //Route Pembayaran
-    $routes->add('pembayaran/new', 'Pembayaran::new');
-    $routes->add('pembayaran/store', 'Pembayaran::store');
+//     //Route Pembayaran
+//     $routes->add('pembayaran/new', 'Pembayaran::new');
+//     $routes->add('pembayaran/store', 'Pembayaran::store');
 
-    //Route Komplin
-    $routes->add('komplain/new', 'Komplain::new');
-    $routes->add('komplain/store', 'Komplain::store');
+//     //Route Komplin
+//     $routes->add('komplain/new', 'Komplain::new');
+//     $routes->add('komplain/store', 'Komplain::store');
 
-});
+// });
 
 
 
