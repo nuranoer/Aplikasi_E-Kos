@@ -1,4 +1,4 @@
-<?= $this->extend('admin/auth/template/header'); ?>
+<?= $this->extend('auth/template/header'); ?>
 
 <?= $this->section('content'); ?>
 <body>
@@ -10,12 +10,12 @@
             <div class="auth-logo">
                 <a href="#"><img src="admin/assets/images/logo/logo.svg" alt="Logo"></a>
             </div>
-            <h1 class="auth-title">Log in Admin</h1>
+            <h1 class="auth-title">Log in</h1>
             <p class="auth-subtitle mb-5">Kost Annisa</p>
 
             <form method="post" action="<?= url_to('login') ?>">    
             <?= csrf_field() ?>
-            <!-- <?php if ($config->validFields === ['email']): ?>            
+            <?php if ($config->validFields === ['email']): ?>            
                 <div class="form-group position-relative has-icon-left mb-4">
                     <input type="email" class="form-control form-control-xl <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>" name="login" placeholder="<?=lang('Auth.email')?>">
                     <div class="form-control-icon">
@@ -45,6 +45,9 @@
 						<?= session('errors.password') ?>
 					</div>
                 </div>
+                <div class="text-center mt-5 text-lg fs-4">
+                <p class='text-gray-600'><?=lang('Belum Punya Akun ?')?> <a href="<?= url_to('register') ?>"><?=lang('Auth.register')?></a></p>
+            </div>
                 <button type="submit" class="btn btn-primary btn-block btn-lg shadow-lg mt-5"><?=lang('Auth.loginAction')?></button> -->
             </form>
         </div>

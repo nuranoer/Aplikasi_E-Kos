@@ -18,13 +18,9 @@ class Login extends BaseController
     
     public function index()
     {
-        echo view('penghuni/auth/login');
+        echo view('auth/login');
     }
     
-    public function index2()
-    {
-        echo view('admin/auth/login');
-    }
 
 
 }
