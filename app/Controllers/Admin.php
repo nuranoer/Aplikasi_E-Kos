@@ -15,4 +15,10 @@ class Admin extends BaseController
         // return view('admin/beranda');
         echo view('admin/auth/login');
     }
+    
+    public function datapenghuni()
+    {
+        // return view('admin/beranda');
+        echo view('admin/datapenghuni/index');
+    }
 }
