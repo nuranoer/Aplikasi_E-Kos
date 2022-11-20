@@ -19,13 +19,19 @@
     />
 
     <link rel="stylesheet" href="assets/css/shared/iconly.css" />
+    <link rel="stylesheet" href="assets/extensions/simple-datatables/style.css">
+    <link rel="stylesheet" href="assets/css/pages/simple-datatables.css">
+    <link rel="stylesheet" href="assets/extensions/filepond/filepond.css">
+    <link rel="stylesheet" href="assets/extensions/filepond-plugin-image-preview/filepond-plugin-image-preview.css">
+    <link rel="stylesheet" href="assets/extensions/toastify-js/src/toastify.css">
+    <link rel="stylesheet" href="assets/css/pages/filepond.css">
   </head>
 
   <body>
 
     <!-- main content -->
     <div id="app">
-        <?= $this->include('admin/layouts/navbar'); ?>
+        <?= $this->include('admin/layouts/sidebar'); ?>
         <!-- <div id="sidebar" class="active">
             <div class="sidebar-wrapper active">
                 <div class="sidebar-header position-relative">
@@ -147,5 +153,10 @@
     <!-- Need: Apexcharts -->
     <script src="assets/extensions/apexcharts/apexcharts.min.js"></script>
     <script src="assets/js/pages/dashboard.js"></script>
+    <script src="assets/extensions/simple-datatables/umd/simple-datatables.js"></script>
+    <script src="assets/js/pages/simple-datatables.js"></script>
+    <script src="assets/extensions/filepond/filepond.js"></script>
+    <script src="assets/extensions/toastify-js/src/toastify.js"></script>
+    <script src="assets/js/pages/filepond.js"></script>
   </body>
 </html>

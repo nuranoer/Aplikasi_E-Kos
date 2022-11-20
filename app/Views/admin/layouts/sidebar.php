@@ -91,35 +91,35 @@
                 <li class="sidebar-title">Menu</li>                    
                 <li
                     class="sidebar-item active ">
-                    <a href="/dashboard" class='sidebar-link'>
+                    <a href="/index" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
                 <li
                     class="sidebar-item">
-                    <a href="#" class='sidebar-link'>
+                    <a href="/datapenghuni" class='sidebar-link'>
                         <i class="bi bi-person-badge-fill"></i>
                         <span>Data Penghuni Kos</span>
                     </a>
                 </li>
                 <li
                     class="sidebar-item">
-                    <a href="#" class='sidebar-link'>
+                    <a href="/datakamar" class='sidebar-link'>
                         <i class="bi bi-stack"></i>
                         <span>Data Kamar</span>
                     </a>
                 </li>
                 <li
                     class="sidebar-item">
-                    <a href="#" class='sidebar-link'>
+                    <a href="/rekappembayaran" class='sidebar-link'>
                         <i class="bi bi-cash"></i>
                         <span>Rekap Pembayaran</span>
                     </a>
                 </li>
                 <li
                     class="sidebar-item ">
-                    <a href="#" class='sidebar-link'>
+                    <a href="/komplain" class='sidebar-link'>
                         <i class="bi bi-chat-dots-fill"></i>
                         <span>Data Komplain</span>
                     </a>
