@@ -1,3 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Untree.co">
+	<link rel="shortcut icon" href="favicon.png">
+
+	<meta name="description" content="" />
+	<meta name="keywords" content="bootstrap, bootstrap4" />
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Serif+Pro:wght@400;700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="auth/css/bootstrap.min.css">
+	<link rel="stylesheet" href="auth/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="auth/css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="auth/css/jquery.fancybox.min.css">
+	<link rel="stylesheet" href="auth/fonts/icomoon/style.css">
+	<link rel="stylesheet" href="auth/fonts/flaticon/font/flaticon.css">
+	<link rel="stylesheet" href="auth/css/daterangepicker.css">
+	<link rel="stylesheet" href="auth/css/aos.css">
+	<link rel="stylesheet" href="auth/css/style.css">
+
+	<title>KOST-ANISA</title>
+</head>
+
+<body>
+
+	<div class="site-mobile-menu site-navbar-target">
+		<div class="site-mobile-menu-header">
+			<div class="site-mobile-menu-close">
+				<span class="icofont-close js-menu-toggle"></span>
+			</div>
+		</div>
+		<div class="site-mobile-menu-body"></div>
+	</div>
+
+	<?= $this->include('pengunjung/layouts/navbar'); ?>
+
+	<?= $this->renderSection('content'); ?>
+
 	<div class="site-footer">
 		<div class="inner first">
 			<div class="container">
@@ -26,7 +69,7 @@
 							</ul>
 						</div>
 					</div>
-					<div class="col-md-6 col-lg-4">
+					<div class="col-md-6 col-lg-3">
 						<div class="widget">
 							<h3 class="heading">Contact</h3>
 							<ul class="list-unstyled quick-info links">
@@ -34,6 +77,9 @@
 								<li class="address"><a href="#">Jln.Penangunggan 1b no.10</a></li>
 							</ul>
 						</div>
+					</div>
+					<div class="col-md-6 col-lg-5">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.053912516065!2d112.0053017188679!3d-7.804367229433384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe3eec627f0abd870!2sKos%20Putri%20Anisa%20Kediri!5e0!3m2!1sid!2sid!4v1669055782104!5m2!1sid!2sid" width="450" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 					</div>
 				</div>
 			</div>
@@ -59,18 +105,18 @@
 		</div>
 	</div>
 
-	<script src="<?= base_url() ?>/auth/js/jquery-3.4.1.min.js"></script>
-	<script src="<?= base_url() ?>/auth/js/popper.min.js"></script>
-	<script src="<?= base_url() ?>/auth/js/bootstrap.min.js"></script>
-	<script src="<?= base_url() ?>/auth/js/owl.carousel.min.js"></script>
-	<script src="<?= base_url() ?>/auth/js/jquery.animateNumber.min.js"></script>
-	<script src="<?= base_url() ?>/auth/js/jquery.waypoints.min.js"></script>
-	<script src="<?= base_url() ?>/auth/js/jquery.fancybox.min.js"></script>
-	<script src="<?= base_url() ?>/auth/js/aos.js"></script>
-	<script src="<?= base_url() ?>/auth/js/moment.min.js"></script>
-	<script src="<?= base_url() ?>/auth/js/daterangepicker.js"></script>
+	<script src="auth/js/jquery-3.4.1.min.js"></script>
+	<script src="auth/js/popper.min.js"></script>
+	<script src="auth/js/bootstrap.min.js"></script>
+	<script src="auth/js/owl.carousel.min.js"></script>
+	<script src="auth/js/jquery.animateNumber.min.js"></script>
+	<script src="auth/js/jquery.waypoints.min.js"></script>
+	<script src="auth/js/jquery.fancybox.min.js"></script>
+	<script src="auth/js/aos.js"></script>
+	<script src="auth/js/moment.min.js"></script>
+	<script src="auth/js/daterangepicker.js"></script>
 
-	<script src="<?php echo base_url();?>/auth/js/typed.js"></script>
+	<script src="auth/js/typed.js"></script>
 	<script>
 		$(function() {
 			var slides = $('.slides'),
@@ -99,6 +145,8 @@
 		})
 	</script>
 
-	<script src="<?= base_url() ?>/auth/js/custom.js"></script>
+	<script src="auth/js/custom.js"></script>
 
-    <?= $this->renderSection('js') ?>
+</body>
+
+</html>
