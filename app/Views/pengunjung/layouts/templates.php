@@ -22,6 +22,7 @@
 	<link rel="stylesheet" href="auth/css/daterangepicker.css">
 	<link rel="stylesheet" href="auth/css/aos.css">
 	<link rel="stylesheet" href="auth/css/style.css">
+	<link rel="stylesheet" href="assets/extensions/sweetalert2/sweetalert2.min.css">
 
 	<title>KOST-ANISA</title>
 </head>
@@ -115,6 +116,17 @@
 	<script src="auth/js/aos.js"></script>
 	<script src="auth/js/moment.min.js"></script>
 	<script src="auth/js/daterangepicker.js"></script>
+	<script src="assets/extensions/sweetalert2/sweetalert2.min.js"></script>
+	<!-- <script src="assets/js/pages/sweetalert2.js"></script> -->
+	<script>
+		document.getElementById("info").addEventListener("click", (e) => {
+			Swal.fire({
+				icon: "info",
+				title: "Info",
+				text: "Jika anda yakin untuk order kamar, silakan buat akun terlebih dahulu!",
+			})
+		})
+	</script>
 
 	<script src="auth/js/typed.js"></script>
 	<script>
@@ -146,6 +158,7 @@
 	</script>
 
 	<script src="auth/js/custom.js"></script>
+    <script src="assets/js/app.js"></script>
 
 </body>
 
