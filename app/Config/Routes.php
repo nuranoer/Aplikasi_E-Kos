@@ -43,6 +43,7 @@ $routes->get('/datapenghuni', 'Admin::datapenghuni');
 
 $routes->get('/datakamar', 'Kamar::datakamar');
 $routes->get('/formkamar', 'Kamar::formkamar');
+$routes->post('/store', 'Kamar::store');
 
 $routes->get('dashboard', 'Penghuni::index');
 

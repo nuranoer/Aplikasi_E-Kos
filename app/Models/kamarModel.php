@@ -8,8 +8,8 @@ class kamarModel extends Model
 {
     protected $table      = 'kamar';
     protected $primaryKey = 'id_kamar';
-
     protected $useAutoIncrement = true;
+    protected $useTimestamps = true;
     protected $allowedFields = ['nama_kamar', 'deskripsi_kamar', 'status_kamar', 'harga_kamar', 'gambar'];
 
     protected $validationRules = [

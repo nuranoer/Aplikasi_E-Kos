@@ -8,36 +8,100 @@ use Exception;
 
 class Kamar extends BaseController
 {
-    private kamarModel $kamar;
+    protected $kamarModel;
 
     public function __construct()
     {
-        $this->kamar = new kamarModel();
-        $this->kamar->asObject();
+        $this->kamarModel = new kamarModel();
+        // $this->kamarModel->asObject();
     }
 
     public function datakamar()
     {
-        // $model = $this->kamar;
-        // $data['kamar'] = $model->findAll();
-        // $data['title'] = 'Data Kamar';
-        // echo view('', $data);
         $data = [
-            'title' => 'Data Kamar | Admin Kost'
+            'title' => 'Data Kamar | Admin Kost',
+            'kamar' => $this->kamarModel->findAll(),
         ];
         echo view('admin/datakamar/index', $data);
     }
     
     public function formkamar()
     {
-        // $model = $this->kamar;
-        // $data['kamar'] = $model->findAll();
-        // $data['title'] = 'Data Kamar';
-        // echo view('', $data);
         $data = [
-            'title' => 'Form Kamar | Admin Kost'
+            'title' => 'Form Kamar | Admin Kost',
+            'validation' => \Config\Services::validation()
         ];
         echo view('admin/datakamar/create', $data);
+    }
+
+    public function store()
+    {
+        $validasi = !$this->validate([
+                        'nama_kamar' => [
+                            'rules' => 'required',
+                            'errors' => [
+                                'required' => 'nama kamar surat harus diisi',
+                            ]
+                        ],
+
+                        'deskripsi_kamar' => [
+                            'rules' => 'required',
+                            'errors' => [
+                                'required' => 'deskripsi kamar harus diisi'
+                            ]
+                        ],
+
+                        'status_kamar' => [
+                            'rules' => 'required',
+                            'errors' => [
+                                'required' => 'status kamar harus dipilih'
+                            ]
+                        ],
+
+                        'harga_kamar' => [
+                            'rules' => 'required',
+                            'errors' => [
+                                'required' => 'harga kamar harus diisi'
+                            ]
+                        ],
+                        
+                        'gambar' => [
+                            'rules' => 'uploaded[gambar]|max_size[gambar,5120]|ext_in[gambar,png,jpg,jpeg]|mime_in[gambar,image/jpg,image/jpeg,image/png]',
+                            'errors' => [
+                                'uploaded' => 'file harus diisi',
+                                'max_size' => 'ukuran file terlalu besar',
+                                'ext_in' => 'file harus berformat jpg/jpeg/png',
+                                'mime_in' => 'file harus berformat jpg/jpeg/png'
+                            ]
+                        ],
+                    ]);
+
+        if($validasi){
+            session()->setFlashdata('error','Mohon cek kembali data Anda!');
+            return redirect()->to('/formkamar')->withInput();
+        } 
+        
+        else{
+
+            //mengambil file foto yg akan diupload di form
+            $file_arsip = $this->request->getFile('gambar');
+            //merandom nama file foto
+            $nama_file = $file_arsip->getRandomName();
+
+            $data = [
+                'nama_kamar' => $this->request->getVar('nama_kamar'),
+                'deskripsi_kamar' => $this->request->getVar('deskripsi_kamar'),
+                'status_kamar' => $this->request->getVar('status_kamar'),
+                'harga_kamar' => $this->request->getVar('harga_kamar'),
+                'gambar' => $nama_file,
+            ];
+
+            $file_arsip->move('gambar_kamar', $nama_file); //directori upload file
+            $this->kamarModel->insert($data);  
+            
+            session()->setFlashdata('success','Data kamar berhasil ditambahkan!');
+            return redirect()->to('/datakamar')->withInput();
+        }
     }
 
     // public function new()
