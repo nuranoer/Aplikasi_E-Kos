@@ -21,24 +21,30 @@
                 <table class="table table-striped" id="table1">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                            <th>City</th>
+                            <th>Nama Kamar</th>
+                            <th>Deskripsi Kamar</th>
+                            <th>Harga</th>
+                            <th>Gambar</th>
                             <th>Status</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Graiden</td>
-                            <td>vehicula.aliquet@semconsequat.co.uk</td>
+                            <td>vehicula.aliquet</td>
                             <td>076 4820 8838</td>
                             <td>Offenburg</td>
                             <td>
                                 <span class="badge bg-success">Active</span>
                             </td>
+                            <td>
+                                <a href="#" class="btn icon btn-warning"><i class="bi bi-pencil"></i></a>
+                                <a href="#" class="btn icon btn-primary"><i class="bi bi-info-circle"></i></a>
+                                <a href="#" class="btn icon btn-danger"><i class="bi bi-x"></i></a>
+                            </td>
                         </tr>
-                        <tr>
+                        <!-- <tr>
                             <td>Dale</td>
                             <td>fringilla.euismod.enim@quam.ca</td>
                             <td>0500 527693</td>
@@ -262,7 +268,7 @@
                             <td>
                                 <span class="badge bg-success">Active</span>
                             </td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
             </div>

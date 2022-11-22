@@ -7,7 +7,10 @@ class Admin extends BaseController
     public function index()
     {
         // return view('admin/beranda');
-        return view('admin/dashboard');
+        $data = [
+            'title' => 'Beranda | Admin Kost'
+        ];
+        return view('admin/dashboard', $data);
     }
     
     public function loginadmin()
@@ -18,7 +21,9 @@ class Admin extends BaseController
     
     public function datapenghuni()
     {
-        // return view('admin/beranda');
-        echo view('admin/datapenghuni/index');
+        $data = [
+            'title' => 'Data Penghuni | Admin Kost'
+        ];
+        return view('admin/datapenghuni/index', $data);
     }
 }

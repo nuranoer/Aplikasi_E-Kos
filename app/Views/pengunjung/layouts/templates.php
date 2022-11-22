@@ -23,6 +23,7 @@
 	<link rel="stylesheet" href="auth/css/aos.css">
 	<link rel="stylesheet" href="auth/css/style.css">
 	<link rel="stylesheet" href="assets/extensions/sweetalert2/sweetalert2.min.css">
+	<!-- <link rel="stylesheet" href="assets/css/main/app.css" /> -->
 
 	<title>KOST-ANISA</title>
 </head>
@@ -117,6 +118,8 @@
 	<script src="auth/js/moment.min.js"></script>
 	<script src="auth/js/daterangepicker.js"></script>
 	<script src="assets/extensions/sweetalert2/sweetalert2.min.js"></script>
+	<script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/app.js"></script>
 	<!-- <script src="assets/js/pages/sweetalert2.js"></script> -->
 	<script>
 		document.getElementById("info").addEventListener("click", (e) => {

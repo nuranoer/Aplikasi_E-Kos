@@ -22,7 +22,10 @@ class Kamar extends BaseController
         // $data['kamar'] = $model->findAll();
         // $data['title'] = 'Data Kamar';
         // echo view('', $data);
-        echo view('admin/datakamar/index');
+        $data = [
+            'title' => 'Data Kamar | Admin Kost'
+        ];
+        echo view('admin/datakamar/index', $data);
     }
     
     public function formkamar()
@@ -31,7 +34,10 @@ class Kamar extends BaseController
         // $data['kamar'] = $model->findAll();
         // $data['title'] = 'Data Kamar';
         // echo view('', $data);
-        echo view('admin/datakamar/create');
+        $data = [
+            'title' => 'Form Kamar | Admin Kost'
+        ];
+        echo view('admin/datakamar/create', $data);
     }
 
     // public function new()
