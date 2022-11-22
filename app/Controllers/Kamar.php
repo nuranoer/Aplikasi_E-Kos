@@ -104,33 +104,21 @@ class Kamar extends BaseController
         }
     }
 
+    public function delete($id)
+    {
+        $data = $this->kamarModel->find($id);
+        $gambar = $data['gambar'];
+        if(file_exists('gambar_kamar/'.$gambar)){
+            unlink('gambar_kamar/'.$gambar);
+        }
+        $this->kamarModel->delete($id);
+        return redirect()->back();
+    }
+
     // public function new()
     // {
     //     $data['title'] = 'Tambah Kamar';
 	// 	echo view('dashboard/jurusan/create', $data);
-    // }
-
-    // public function store()
-    // {
-    //     $data = [
-    //         'nama_kamar' => $this->request->getPost('nama_kamar'),
-    //         'deskripsi_kamar' => $this->request->getPost('deskripsi_kamar'),
-    //         'status_kamar' => $this->request->getPost('status_kamar'),
-    //         'harga_kamar' => $this->request->getPost('harga_kamar'),
-    //         'gambar' => $this->request->getPost('gambar')
-    //     ];
-
-    //     if (!$this->jurusan->validate($data)) {
-    //         return redirect()->to('/dashboard/jurusan/new')->withInput()->with('errors', $this->jurusan->errors());
-    //     }
-
-    //     try {
-    //         $this->jurusan->protect(false)->insert($data);
-    //     } catch (Exception $e) {
-    //         return redirect()->to('/dashboard/jurusan/new')->withInput()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
-    //     }
-
-    //     return redirect()->to('/dashboard/jurusan')->with('success', 'Berhasil menambahkan data');
     // }
 
     // public function edit($id)
@@ -160,16 +148,6 @@ class Kamar extends BaseController
     //     }
 
     //     return redirect()->to('/dashboard/jurusan')->with('success', 'Berhasil mengupdate data');
-    // }
-    
-    // public function delete($id){
-    //     try {
-    //         $this->jurusan->delete($id);
-    //     } catch (Exception $e) {
-    //         return redirect()->to('dashboard/jurusan')->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
-    //     }
-        
-    //     return redirect()->to('/dashboard/jurusan')->with('success', 'Berhasil menghapus data');
     // }
 
 }

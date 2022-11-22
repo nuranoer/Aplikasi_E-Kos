@@ -51,8 +51,8 @@
                             </td>
                             <td>
                                 <a href="#" class="btn icon btn-warning"><i class="bi bi-pencil"></i></a>
-                                <a href="#" class="btn icon btn-primary"><i class="bi bi-info-circle"></i></a>
-                                <a href="#" class="btn icon btn-danger"><i class="bi bi-trash3"></i></a>
+                                <button class="btn icon btn-primary"><i class="bi bi-info-circle"></i></button>
+                                <a href="/deletekamar/<?= $k['id_kamar'] ?>" class="btn icon btn-danger" type="button"><i class="bi bi-trash3"></i></a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

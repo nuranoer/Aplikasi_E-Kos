@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="assets/extensions/filepond-plugin-image-preview/filepond-plugin-image-preview.css">
     <link rel="stylesheet" href="assets/extensions/toastify-js/src/toastify.css">
     <link rel="stylesheet" href="assets/css/pages/filepond.css">
+    <link rel="stylesheet" href="assets/extensions/sweetalert2/sweetalert2.min.css">
+
   </head>
 
   <body>
@@ -158,5 +160,28 @@
     <script src="assets/extensions/filepond/filepond.js"></script>
     <script src="assets/extensions/toastify-js/src/toastify.js"></script>
     <script src="assets/js/pages/filepond.js"></script>
+    <script src="assets/extensions/sweetalert2/sweetalert2.min.js"></script>
+    <script src="assets/js/pages/sweetalert2.js"></script>
+    <script>
+        $(document).on("click", ".btn-hapus", function (e) {
+            Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+                )
+            }
+            });
+        });
+    </script>
   </body>
 </html>
