@@ -34,4 +34,11 @@ class kamarModel extends Model
         ],
     ];
 
+    public function detail_data($id_kamar = false){
+        if($id_kamar == false){
+            return $this->findAll();
+        }
+        return $this->where(['id_kamar' => $id_kamar])->first();
+    }
+
 }

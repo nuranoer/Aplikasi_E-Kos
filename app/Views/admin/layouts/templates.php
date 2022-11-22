@@ -162,26 +162,19 @@
     <script src="assets/js/pages/filepond.js"></script>
     <script src="assets/extensions/sweetalert2/sweetalert2.min.js"></script>
     <script src="assets/js/pages/sweetalert2.js"></script>
-    <script>
-        $(document).on("click", ".btn-hapus", function (e) {
-            Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-            }).then((result) => {
-            if (result.isConfirmed) {
-                Swal.fire(
-                'Deleted!',
-                'Your file has been deleted.',
-                'success'
-                )
-            }
-            });
+    <!-- <script type="text/javascript">
+        $('.btn-detail').click(function() {
+            // $('#modalDetail').modal();
+            var id_kamar = $(this).attr('data-id');
+            var nama_kamar = $(this).attr('data-nama');
+            var harga_kamar = $(this).attr('data-harga');
+            var status_kamar = $(this).attr('data-status');
+            $('#id_kamar').val(id_kamar);
+            $('#nama_kamar').val(nama_kamar);
+            $('#harga_kamar').val(harga_kamar);
+            $('#status_kamar').val(status_kamar);
+            $('#modalDetail').modal('show');
         });
-    </script>
+    </script> -->
   </body>
 </html>
