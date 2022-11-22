@@ -1,4 +1,4 @@
-<?= $this->extend('penghuni/layouts/app'); ?>
+<?= $this->extend('penghuni/layouts/templates'); ?>
 
 <?= $this->section('content'); ?>
 

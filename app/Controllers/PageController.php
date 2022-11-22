@@ -24,10 +24,6 @@ class PageController extends BaseController
         // $data['jumlah_pembayaran'] = $pembayaran->countAll();
         // $data['jumlah_pemesanan'] = $pemesanan->countAll();
         // $data['jumlah_komplain'] = $komplain->countAll();
-        echo view('admin/dashboard');
-    }
-    public function index2()
-    {
-        echo view('penghuni/dashboard');
+        // echo view('admin/dashboard');
     }
 }

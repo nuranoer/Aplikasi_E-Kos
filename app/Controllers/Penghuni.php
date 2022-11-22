@@ -18,83 +18,88 @@ class Penghuni extends BaseController
 
     public function index()
     {
-        $model = $this->penghuni;
-        $data['penghuni'] = $model->findAll();
-        $data['title'] = 'List Penghuni';
-		echo view('', $data);
+        echo view('penghuni/dashboard');
     }
 
-    public function new()
-    {
-        $data['title'] = 'Tambah Penghuni';
-		echo view('dashboard/jurusan/create', $data);
-    }
+    // public function index()
+    // {
+    //     $model = $this->penghuni;
+    //     $data['penghuni'] = $model->findAll();
+    //     $data['title'] = 'List Penghuni';
+	// 	echo view('', $data);
+    // }
 
-    public function store()
-    {
-        $data = [
-            'nama_penghuni' => $this->request->getPost('nama_penghuni'),
-            'pass_penghuni' => $this->request->getPost('pass_penghuni'),
-            'email_penghuni' => $this->request->getPost('email_penghuni'),
-            'status' => $this->request->getPost('status'),
-            'nohp' => $this->request->getPost('nohp'),
-            'alamat_penghuni' => $this->request->getPost('alamat_penghuni')
-        ];
+    // public function new()
+    // {
+    //     $data['title'] = 'Tambah Penghuni';
+	// 	echo view('dashboard/jurusan/create', $data);
+    // }
 
-        if (!$this->penghuni->validate($data)) {
-            return redirect()->to('/dashboard/jurusan/new')->withInput()->with('errors', $this->penghuni->errors());
-        }
+    // public function store()
+    // {
+    //     $data = [
+    //         'nama_penghuni' => $this->request->getPost('nama_penghuni'),
+    //         'pass_penghuni' => $this->request->getPost('pass_penghuni'),
+    //         'email_penghuni' => $this->request->getPost('email_penghuni'),
+    //         'status' => $this->request->getPost('status'),
+    //         'nohp' => $this->request->getPost('nohp'),
+    //         'alamat_penghuni' => $this->request->getPost('alamat_penghuni')
+    //     ];
 
-        try {
-            $this->penghuni->protect(false)->insert($data);
-        } catch (Exception $e) {
-            return redirect()->to('/dashboard/jurusan/new')->withInput()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
-        }
+    //     if (!$this->penghuni->validate($data)) {
+    //         return redirect()->to('/dashboard/jurusan/new')->withInput()->with('errors', $this->penghuni->errors());
+    //     }
 
-        return redirect()->to('/dashboard/jurusan')->with('success', 'Berhasil menambahkan data');
-    }
+    //     try {
+    //         $this->penghuni->protect(false)->insert($data);
+    //     } catch (Exception $e) {
+    //         return redirect()->to('/dashboard/jurusan/new')->withInput()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+    //     }
 
-    public function edit($id)
-    {
-        $model = $this->penghuni;
-        $data['data'] = $model->where('id_penghuni', $id)->first();
-        $data['title'] = 'Update Data';
+    //     return redirect()->to('/dashboard/jurusan')->with('success', 'Berhasil menambahkan data');
+    // }
+
+    // public function edit($id)
+    // {
+    //     $model = $this->penghuni;
+    //     $data['data'] = $model->where('id_penghuni', $id)->first();
+    //     $data['title'] = 'Update Data';
         
-        echo view('dashboard/jurusan/edit', $data);
-    }
+    //     echo view('dashboard/jurusan/edit', $data);
+    // }
 
-    public function update($id)
-    {
-        $data = [
-            'nama_penghuni' => $this->request->getPost('nama_penghuni'),
-            'pass_penghuni' => $this->request->getPost('pass_penghuni'),
-            'email_penghuni' => $this->request->getPost('email_penghuni'),
-            'status' => $this->request->getPost('status'),
-            'nohp' => $this->request->getPost('nohp'),
-            'alamat_penghuni' => $this->request->getPost('alamat_penghuni')
-        ];
+    // public function update($id)
+    // {
+    //     $data = [
+    //         'nama_penghuni' => $this->request->getPost('nama_penghuni'),
+    //         'pass_penghuni' => $this->request->getPost('pass_penghuni'),
+    //         'email_penghuni' => $this->request->getPost('email_penghuni'),
+    //         'status' => $this->request->getPost('status'),
+    //         'nohp' => $this->request->getPost('nohp'),
+    //         'alamat_penghuni' => $this->request->getPost('alamat_penghuni')
+    //     ];
 
-        if (!$this->penghuni->validate($data)) {
-            return redirect()->to('/dashboard/penghuni/'. $id .'/edit')->withInput()->with('errors', $this->penghuni->errors());
-        }
+    //     if (!$this->penghuni->validate($data)) {
+    //         return redirect()->to('/dashboard/penghuni/'. $id .'/edit')->withInput()->with('errors', $this->penghuni->errors());
+    //     }
 
-        try {
-            $this->penghuni->protect(false)->update($id, $data);
-        } catch (Exception $e) {
-            return redirect()->to('/dashboard/penghuni/'. $id .'/edit')->withInput()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
-        }
+    //     try {
+    //         $this->penghuni->protect(false)->update($id, $data);
+    //     } catch (Exception $e) {
+    //         return redirect()->to('/dashboard/penghuni/'. $id .'/edit')->withInput()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+    //     }
 
-        return redirect()->to('/dashboard/penghuni')->with('success', 'Berhasil mengupdate data');
-    }
+    //     return redirect()->to('/dashboard/penghuni')->with('success', 'Berhasil mengupdate data');
+    // }
     
-    public function delete($id){
-        try {
-            $this->penghuni->delete($id);
-        } catch (Exception $e) {
-            return redirect()->to('dashboard/penghuni')->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
-        }
+    // public function delete($id){
+    //     try {
+    //         $this->penghuni->delete($id);
+    //     } catch (Exception $e) {
+    //         return redirect()->to('dashboard/penghuni')->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+    //     }
         
-        return redirect()->to('/dashboard/penghuni')->with('success', 'Berhasil menghapus data');
-    }
+    //     return redirect()->to('/dashboard/penghuni')->with('success', 'Berhasil menghapus data');
+    // }
     
 }

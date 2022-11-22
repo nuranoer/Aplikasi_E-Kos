@@ -43,12 +43,13 @@
 		</div>
 	</div>
 
-	<div class="untree_co-section">
+	<!-- Kamar yang Tersedia -->
+	<div class="untree_co-section" id="kamarTersedia">
 		<div class="container">
 			<div class="row justify-content-center text-center">
 				<div class="col-lg-6">
 					<h2 class="section-title text-center mb-3">Kamar yang Tersedia</h2>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+					<!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p> -->
 				</div>
 			</div>
 			<div class="row">
@@ -139,7 +140,7 @@
 	</div>
 
 	<!-- Layanan kami -->
-	<div class="untree_co-section">
+	<div class="untree_co-section" id="layananKamar">
 		<div class="container">
 			<div class="row mb-5 justify-content-center">
 				<div class="col-lg-6 text-center">
@@ -189,7 +190,7 @@
 	</div>
 	
 	<!-- gallery / detail -->
-	<div class="untree_co-section">
+	<div class="untree_co-section" id="galleryKamar">
 		<div class="container">
 			<div class="row mb-5 justify-content-center">
 				<div class="col-lg-6 text-center">

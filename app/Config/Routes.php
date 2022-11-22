@@ -37,11 +37,14 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Pengunjung::index');
 $routes->get('/info', 'Pengunjung::info');
+
 $routes->get('/index', 'Admin::index');
 $routes->get('/datapenghuni', 'Admin::datapenghuni');
+
 $routes->get('/datakamar', 'Kamar::datakamar');
 $routes->get('/formkamar', 'Kamar::formkamar');
-$routes->get('/dashboard2', 'PageController::index2');
+
+$routes->get('dashboard', 'Penghuni::index');
 
 
 // $routes->group('admin', function($routes){
