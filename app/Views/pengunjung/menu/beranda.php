@@ -18,9 +18,9 @@
 				</div>
 				<div class="col-lg-5">
 					<div class="slides">
-						<img src="<?= base_url() ?>/auth/images/kos1.jpeg" alt="Image" class="img-fluid active">
-						<img src="<?= base_url() ?>/auth/images/kos2.jpeg" alt="Image" class="img-fluid">
-						<img src="<?= base_url() ?>/auth/images/kos3.jpeg" alt="Image" class="img-fluid">
+						<img src="<?= base_url() ?>/auth/images/kos/kos1.jpeg" alt="Image" class="img-fluid active">
+						<img src="<?= base_url() ?>/auth/images/kos/kos2.jpeg" alt="Image" class="img-fluid">
+						<img src="<?= base_url() ?>/auth/images/kos/kos3.jpeg" alt="Image" class="img-fluid">
 					</div>
 				</div>
 			</div>

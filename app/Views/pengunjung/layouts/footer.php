@@ -1,4 +1,4 @@
-<div class="site-footer">
+	<div class="site-footer">
 		<div class="inner first">
 			<div class="container">
 				<div class="row">
@@ -38,8 +38,6 @@
 				</div>
 			</div>
 		</div>
-
-
 
 		<div class="inner dark">
 			<div class="container">
