@@ -14,7 +14,7 @@
             <h1 class="auth-title">Registrasi Akun</h1>
             <p class="auth-subtitle mb-5">Kost Annisa</p>
 
-            <form action="<?= url_to('register') ?>" method="post">
+            <form action="<?= route_to('register') ?>" method="post">
                         <?= csrf_field() ?>
                 <div class="form-group position-relative has-icon-left mb-4">
                     <input type="text" class="form-control form-control-xl <?php if (session('errors.email')) : ?>is-invalid<?php endif ?>" name="email" placeholder="<?=lang('Auth.email')?>">

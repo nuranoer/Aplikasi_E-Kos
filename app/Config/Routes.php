@@ -40,6 +40,7 @@ $routes->get('dashboard', 'PageController::index');
 $routes->get('dashboard2', 'PageController::index2');
 
 
+
 // $routes->group('admin', function($routes){
 //     $routes->get('/', 'PageController::index');
 

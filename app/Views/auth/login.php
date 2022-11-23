@@ -8,12 +8,12 @@
     <div class="col-lg-5 col-12">
         <div id="auth-left">
             <div class="auth-logo">
-                <a href="#"><img src="admin/assets/images/logo/logo.svg" alt="Logo"></a>
+                <a href=""><img src="admin/assets/images/logo/logo.svg" alt="Logo"></a>
             </div>
             <h1 class="auth-title">Log in</h1>
             <p class="auth-subtitle mb-5">Kost Annisa</p>
 
-            <form method="post" action="<?= url_to('login') ?>">    
+            <form method="post" action="<?= route_to('login') ?>">    
             <?= csrf_field() ?>
             <?php if ($config->validFields === ['email']): ?>            
                 <div class="form-group position-relative has-icon-left mb-4">
