@@ -43,15 +43,15 @@
 						<div class="align-self-center">
 							<span class="flaticon-house display-4 text-primary"></span>
 							<h3>Kamar Luas</h3>
-							<p class="mb-0">Even the all-powerful Pointing has no control about the blind texts.</p>
+							<p class="mb-0">Kamar berkisar berukuran 5 x 5 m2 , 4 x 3 m2, dan 3 x 3 m2</p>
 						</div>
 					</div>
 
 					<div class="feature-1 ">
 						<div class="align-self-center">
 							<span class="flaticon-restaurant display-4 text-primary"></span>
-							<h3>Dekat dengan berbagai restoran</h3>
-							<p class="mb-0">Even the all-powerful Pointing has no control about the blind texts.</p>
+							<h3>Dekat dengan berbagai tempat makan</h3>
+							<p class="mb-0">Penghuni kos tidak akan kesulitan mencari makanan karena tempat kost dekat dengan penjual makanan maupun rumah makan</p>
 						</div>
 					</div>
 
@@ -63,7 +63,7 @@
 						<div class="align-self-center">
 							<span class="flaticon-mail display-4 text-primary"></span>
 							<h3>Free Wifi</h3>
-							<p class="mb-0">Even the all-powerful Pointing has no control about the blind texts.</p>
+							<p class="mb-0">Penghuni kos tidak kesulitan untuk mengakses internet di area kos dikarekan sudah free wifi</p>
 						</div>
 					</div>
 
@@ -71,7 +71,7 @@
 						<div class="align-self-center">
 							<span class="flaticon-swimming display-4 text-primary"></span>
 							<h3>Kamar Mandi Dalam</h3>
-							<p class="mb-0">Even the all-powerful Pointing has no control about the blind texts.</p>
+							<p class="mb-0">Privasi penghuni kos akan terjaga dikarenakan kamar mandi kos ada di dalam kamar</p>
 						</div>
 					</div>
 
@@ -89,7 +89,7 @@
 					<div class="col-lg-6">
 						<h2 class="text-center">Daftar Kamar Kost</h2>
 						<hr style="border: 1px solid white;">
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi iure vero natus neque unde inventore culpa doloremque harum odio ex, quas sed totam. A nostrum deleniti, fugiat temporibus enim pariatur neque, accusantium fugit soluta sequi modi placeat saepe cupiditate doloremque! Cum et eum debitis ea voluptate quod praesentium vero voluptates!</p>
+						<p>Bagi Kalian yang ingin melihat daftar kamar kos di kost anisa. Bisa Kalian Klik tombol di bawah ini !</p>
 						<p class="mb-0"><a href="#" class="btn btn-outline-white text-white btn-md font-weight-bold">See more</a></p>
 					</div>
 				</div>
@@ -154,38 +154,66 @@
 				<div class="custom-accordion" id="accordion_1">
 				<div class="accordion-item">
 					<h2 class="mb-0">
-						<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">How to download and register?</button>
+						<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Apa yang membuat harus memesan kamar kos di kos anisa?</button>
 					</h2>
 
 					<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion_1">
 						<div class="accordion-body">
-							Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
-						</div>
+						Kos Anisa Dekat dengan banyak kampus dan terjangkau untuk mahasiswa.						
+					</div>
 					</div>
 				</div>
 
 				<div class="accordion-item">
 					<h2 class="mb-0">
-						<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">How to create your paypal account?</button>
+						<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Siapa yang bisa memesan kamar kos di kos anisa?</button>
 					</h2>
 					<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion_1">
 						<div class="accordion-body">
-							A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
-						</div>
+						Kos anisa untuk khalayak umum dan siapapun yang ingin nge kos.						
+					</div>
 					</div>
 				</div>
 				<div class="accordion-item">
 					<h2 class="mb-0">
-					<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">How to link your paypal and bank account?</button>
+					<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Dimana letak kos anisa ?</button>
 					</h2>
 
 					<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion_1">
 					<div class="accordion-body">
-						When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.
+					Jln.Penangunggan 1b no.10					
 					</div>
 					</div>
 
 				</div>
+
+				<div class="accordion-item">
+					<h2 class="mb-0">
+					<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">Dimana letak kos anisa ?</button>
+					</h2>
+
+					<div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion_1">
+					<div class="accordion-body">
+					Pemesanan kamar kos di kos anisa bisa dilakukan offline dan Online melalui Transfer Bank, Gopay, dll.					
+					</div>
+					</div>
+
+				</div>
+
+				<div class="accordion-item">
+					<h2 class="mb-0">
+					<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">Dimana letak kos anisa ?</button>
+					</h2>
+
+					<div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion_1">
+					<div class="accordion-body">
+					Karena Lokasi strategis, Terjangkau, dan Mudah pembayaran.					
+					</div>
+					</div>
+
+				</div>
+
+				
 
 				</div>
 			</div>
@@ -198,7 +226,7 @@
 			<div class="row text-center">
 				<div class="col-md-12">
 					<h2 class="mb-2 text-white">KOST ANISA</h2>
-					<p class="mb-4 lead text-white text-white-opacity">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, fugit?</p>
+					<p class="mb-4 lead text-white text-white-opacity">Melayani dengan sepenuh hati</p>
 				</div>
 			</div>
 		</div>
