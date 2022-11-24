@@ -86,7 +86,7 @@
                             </div>
                             <div class="user-img d-flex align-items-center">
                                 <div class="avatar avatar-md">
-                                    <img src="assets/images/faces/3.jpg">
+                                    <img src="assets/images/faces/default_penghuni.jpg">
                                 </div>
                             </div>
                         </div>
