@@ -25,7 +25,7 @@
                 <!-- <li><a href="services.html">Services</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact Us</a></li> -->
-                <li><a href="#" class="btn btn-outline-white text-white">LOGIN</a></li>
+                <li><a href="/login" class="btn btn-outline-white text-white">LOGIN</a></li>
             </ul>
 
             <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none light" data-toggle="collapse" data-target="#main-navbar">
