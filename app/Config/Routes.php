@@ -47,6 +47,7 @@ $routes->post('/store', 'Kamar::store', ['filter' => 'role:admin']);
 $routes->get('/deletekamar/(:num)', 'Kamar::delete/$1', ['filter' => 'role:admin']);
 
 $routes->get('dashboard', 'Penghuni::index');
+$routes->get('/profile', 'Penghuni::profile');
 
 
 

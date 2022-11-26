@@ -19,9 +19,9 @@
             </div>
         </div>
         <div class="sidebar-menu">
-            <?php if(in_groups('admin')): ?>
             <ul class="menu">
                 <li class="sidebar-title">Menu</li>                    
+                <?php if(in_groups('admin')): ?>
                 <li
                     class="sidebar-item active ">
                     <a href="/admin" class='sidebar-link'>
@@ -32,7 +32,7 @@
                 <li
                     class="sidebar-item">
                     <a href="/datapenghuni" class='sidebar-link'>
-                        <i class="bi bi-person-badge-fill"></i>
+                        <i class="bi bi-file-earmark-spreadsheet-fill"></i>
                         <span>Data Penghuni Kos</span>
                     </a>
                 </li>
@@ -57,11 +57,7 @@
                         <span>Data Komplain</span>
                     </a>
                 </li>         
-            </ul>
-
-            <?php elseif(in_groups('penghuni')): ?>
-            <ul class="menu">
-                <li class="sidebar-title">Menu</li>                    
+                <?php elseif(in_groups('penghuni')): ?>
                 <li
                     class="sidebar-item active ">
                     <a href="dashboard" class='sidebar-link'>
@@ -76,8 +72,15 @@
                         <span>Pembayaran Kos Bulanan</span>
                     </a>
                 </li>     
+                <?php endif; ?>
+
+                <li class="sidebar-item">
+                    <a href="/profile" class="sidebar-link">
+                        <i class="bi bi-person-badge-fill"></i>
+                        <span>Profile Saya</span>
+                    </a>
+                </li>
             </ul>
-            <?php endif; ?>
         </div>
     </div>
 </div>  

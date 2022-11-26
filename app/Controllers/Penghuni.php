@@ -18,7 +18,18 @@ class Penghuni extends BaseController
 
     public function index()
     {
-        echo view('penghuni/dashboard');
+        $data = [
+            'title' => 'Beranda'
+        ];
+        return view('penghuni/dashboard', $data);
+    }
+    
+    public function profile()
+    {
+        $data = [
+            'title' => 'Profile Saya'
+        ];
+        return view('penghuni/profile', $data);
     }
 
     // public function index()

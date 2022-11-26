@@ -4,25 +4,25 @@ namespace App\Controllers;
 
 class Admin extends BaseController
 {
+    protected $dataModel;
+    
+    public function __construct(){
+        $this->dataModel = new \Myth\Auth\Models\UserModel();
+    }
+
     public function index()
     {
-        // return view('admin/beranda');
         $data = [
-            'title' => 'Beranda | Admin Kost'
+            'title' => 'Beranda'
         ];
         return view('admin/dashboard', $data);
-    }
-    
-    public function loginadmin()
-    {
-        // return view('admin/beranda');
-        echo view('admin/auth/login');
     }
     
     public function datapenghuni()
     {
         $data = [
-            'title' => 'Data Penghuni | Admin Kost'
+            'title' => 'Data Penghuni',
+            'users' => $this->dataModel->getData()
         ];
         return view('admin/datapenghuni/index', $data);
     }
