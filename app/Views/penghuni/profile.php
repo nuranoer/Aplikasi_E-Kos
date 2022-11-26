@@ -2,7 +2,6 @@
 
 <?= $this->section('content'); ?>
 
-    <?php if(in_groups('admin')): ?>
     <div class="page-heading">
         <section class="section">
             <div class="card">
@@ -27,15 +26,12 @@
                             <p><?= user()->username; ?></p>
                             <h4>Email:</h4>
                             <p><?= user()->email; ?></p>
+                            <button class="btn btn-primary rounded-pill">Edit Profile</button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     </div>
-    
-    <?php elseif(in_groups('penghuni')): ?>
-    
-    <?php endif; ?>
 
 <?= $this->endSection(); ?>
