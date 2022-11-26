@@ -7,11 +7,11 @@
         <section class="section">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Profile saya | 
+                    <h4 class="card-title">Profile saya 
                     <?php if(in_groups('admin')): ?>
-                    Admin
+                    (Admin)
                     <?php elseif(in_groups('penghuni')): ?>
-                    Penghuni
+                    (Penghuni)
                     <?php endif; ?>
                     </h4>
                 </div>
@@ -22,8 +22,11 @@
                         </div>
                         <div class="col-lg-7">
                             <h4>Fullname:</h4>
+                            <p><?= user()->fullname; ?></p>
+                            <h4>Username:</h4>
+                            <p><?= user()->username; ?></p>
                             <h4>Email:</h4>
-                            <h4>Role:</h4>
+                            <p><?= user()->email; ?></p>
                         </div>
                     </div>
                 </div>
