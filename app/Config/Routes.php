@@ -38,13 +38,13 @@ $routes->set404Override();
 $routes->get('/', 'Pengunjung::index');
 $routes->get('/info', 'Pengunjung::info');
 
-$routes->get('/index', 'Admin::index');
-$routes->get('/datapenghuni', 'Admin::datapenghuni');
+$routes->get('/admin', 'Admin::index', ['filter' => 'role:admin']);
+$routes->get('/datapenghuni', 'Admin::datapenghuni', ['filter' => 'role:admin']);
 
-$routes->get('/datakamar', 'Kamar::datakamar');
-$routes->get('/formkamar', 'Kamar::formkamar');
-$routes->post('/store', 'Kamar::store');
-$routes->get('/deletekamar/(:num)', 'Kamar::delete/$1');
+$routes->get('/datakamar', 'Kamar::datakamar', ['filter' => 'role:admin']);
+$routes->get('/formkamar', 'Kamar::formkamar', ['filter' => 'role:admin']);
+$routes->post('/store', 'Kamar::store', ['filter' => 'role:admin']);
+$routes->get('/deletekamar/(:num)', 'Kamar::delete/$1', ['filter' => 'role:admin']);
 
 $routes->get('dashboard', 'Penghuni::index');
 

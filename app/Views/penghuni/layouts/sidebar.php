@@ -19,6 +19,47 @@
             </div>
         </div>
         <div class="sidebar-menu">
+            <?php if(in_groups('admin')): ?>
+            <ul class="menu">
+                <li class="sidebar-title">Menu</li>                    
+                <li
+                    class="sidebar-item active ">
+                    <a href="/admin" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li
+                    class="sidebar-item">
+                    <a href="/datapenghuni" class='sidebar-link'>
+                        <i class="bi bi-person-badge-fill"></i>
+                        <span>Data Penghuni Kos</span>
+                    </a>
+                </li>
+                <li
+                    class="sidebar-item">
+                    <a href="/datakamar" class='sidebar-link'>
+                        <i class="bi bi-stack"></i>
+                        <span>Data Kamar</span>
+                    </a>
+                </li>
+                <li
+                    class="sidebar-item">
+                    <a href="/rekappembayaran" class='sidebar-link'>
+                        <i class="bi bi-cash"></i>
+                        <span>Rekap Pembayaran</span>
+                    </a>
+                </li>
+                <li
+                    class="sidebar-item ">
+                    <a href="/komplain" class='sidebar-link'>
+                        <i class="bi bi-chat-dots-fill"></i>
+                        <span>Data Komplain</span>
+                    </a>
+                </li>         
+            </ul>
+
+            <?php elseif(in_groups('penghuni')): ?>
             <ul class="menu">
                 <li class="sidebar-title">Menu</li>                    
                 <li
@@ -36,6 +77,7 @@
                     </a>
                 </li>     
             </ul>
+            <?php endif; ?>
         </div>
     </div>
 </div>  
