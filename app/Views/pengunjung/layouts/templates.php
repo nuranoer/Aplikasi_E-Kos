@@ -121,15 +121,6 @@
 	<script src="assets/js/bootstrap.js"></script>
     <script src="assets/js/app.js"></script>
 	<!-- <script src="assets/js/pages/sweetalert2.js"></script> -->
-	<script>
-		document.getElementById("info").addEventListener("click", (e) => {
-			Swal.fire({
-				icon: "info",
-				title: "Info",
-				text: "Jika anda yakin untuk order kamar, silakan buat akun terlebih dahulu!",
-			})
-		})
-	</script>
 
 	<script src="auth/js/typed.js"></script>
 	<script>

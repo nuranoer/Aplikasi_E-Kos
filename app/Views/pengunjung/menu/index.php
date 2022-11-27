@@ -90,7 +90,7 @@
 						<h2 class="text-center">Daftar Kamar Kost</h2>
 						<hr style="border: 1px solid white;">
 						<p>Bagi Kalian yang ingin melihat daftar kamar kos di kost anisa. Bisa Kalian Klik tombol di bawah ini !</p>
-						<p class="mb-0"><a href="#" class="btn btn-outline-white text-white btn-md font-weight-bold">See more</a></p>
+						<p class="mb-0"><a href="/info#kamarTersedia" class="btn btn-outline-white text-white btn-md font-weight-bold">See more</a></p>
 					</div>
 				</div>
 			</div>

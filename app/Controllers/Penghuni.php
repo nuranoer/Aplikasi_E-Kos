@@ -32,14 +32,6 @@ class Penghuni extends BaseController
         return view('penghuni/profile', $data);
     }
 
-    // public function index()
-    // {
-    //     $model = $this->penghuni;
-    //     $data['penghuni'] = $model->findAll();
-    //     $data['title'] = 'List Penghuni';
-	// 	echo view('', $data);
-    // }
-
     // public function new()
     // {
     //     $data['title'] = 'Tambah Penghuni';

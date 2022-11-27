@@ -114,13 +114,7 @@ class Kamar extends BaseController
         $this->kamarModel->delete($id);
         return redirect()->back();
     }
-
-    // public function new()
-    // {
-    //     $data['title'] = 'Tambah Kamar';
-	// 	echo view('dashboard/jurusan/create', $data);
-    // }
-
+    
     // public function edit($id)
     // {
     //     $model = $this->jurusan;

@@ -40,10 +40,11 @@
                         </tr>
                     </thead>
                     <tbody>
+                    <?php $no = 1; ?>
                     <?php foreach ($kamar as $k) :
                       ?>
                         <tr>
-                            <td><?= $k['id_kamar'] ?></td>
+                            <td><?= $no++; ?></td>
                             <td><?= $k['nama_kamar'] ?></td>
                             <td><?= $k['harga_kamar'] ?></td>
                             <td>
