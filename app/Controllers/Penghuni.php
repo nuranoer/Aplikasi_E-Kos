@@ -4,16 +4,19 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\penghuniModel;
+use App\Models\pemesananModel;
 use Exception;
 
 class Penghuni extends BaseController
 {
-    private penghuniModel $penghuni;
+    protected $penghuni;
+    protected $pemesanan;
 
     public function __construct()
     {
         $this->penghuni = new penghuniModel();
-        $this->penghuni->asObject();
+        $this->pemesanan = new pemesananModel();
+        // $this->penghuni->asObject();
     }
 
     public function index()
@@ -32,11 +35,46 @@ class Penghuni extends BaseController
         return view('penghuni/profile', $data);
     }
 
-    // public function new()
-    // {
-    //     $data['title'] = 'Tambah Penghuni';
-	// 	echo view('dashboard/jurusan/create', $data);
-    // }
+    public function pesan()
+    {
+        $validasi = !$this->validate([
+
+            'durasi' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'durasi harus diisi'
+                ]
+            ],
+
+            'pengajuan_tgl' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'field pengajuan tinggal harus dipilih'
+                ]
+            ],
+        ]);
+
+        if($validasi){
+            session()->setFlashdata('error','Mohon cek kembali data Anda!');
+            return redirect()->to('/info')->withInput();
+        }
+
+        else{
+            $data = [
+                'id_kamar' => $this->request->getVar('id_kamar'),
+                'id_penghuni' => $this->request->getVar('id_penghuni'),
+                'pengajuan_tgl' => $this->request->getVar('pengajuan_tgl'),
+                'durasi' => $this->request->getVar('durasi'),
+                'status' => $this->request->getVar('status'),
+            ];
+
+            $this->pemesanan->insert($data);  
+            
+            session()->setFlashdata('success','Sukses memesan kamar! Tunggu verifikasi ibu kos!');
+            return redirect()->to('/info')->withInput();
+        }
+        return view('/info');
+    }
 
     // public function store()
     // {

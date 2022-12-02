@@ -9,7 +9,7 @@
                 <div id="auth-left">
                     <a href=""><img src="assets/images/logo/logo.svg" alt="Logo" width="100"></a>
                     <h1 class="auth-title">Log in</h1>
-                    <p class="auth-subtitle mb-1">Kost Annisa</p>
+                    <p class="fs-4 mb-1">Penghuni Kost Annisa</p>
 
                     <?= view('Myth\Auth\Views\_message_block') ?>
                     

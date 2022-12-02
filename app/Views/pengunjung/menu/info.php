@@ -14,44 +14,34 @@
 		</div>
 		</div>
   	</div>
-
-	<!-- info detail kost -->
-	<!-- <div class="untree_co-section">
-		<div class="container">
-			<div class="row justify-content-center text-center mb-5">
-				<div class="col-lg-6">
-					<h2 class="section-title text-center mb-3">Info Harga Kamar Kos</h2>
-					<p>Silahkan di pesan kakak!!</p>
-				</div>
-			</div>
-			<div class="row">
-            	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 img1colon">
-					<div class="media-1">
-                    	<a class="d-block mb-3"><img src="" alt=""></a>
-						<div class="d-flex align-items-center">
-							<div>
-                            	<h1>Nama kamar</h1>
-								<p>Fasilitas : </p>
-								<p>Status : </p>
-								<h2>Harga Rp.</h2><br>
-								<a  href="#" class="btn btn-primary">PESAN</a>
-							</div>							
-						</div>	
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> -->
-
+	  
 	<!-- Kamar yang Tersedia -->
 	<div class="untree_co-section" id="kamarTersedia">
 		<div class="container">
 			<div class="row justify-content-center text-center">
 				<div class="col-lg-6">
 					<h2 class="section-title text-center mb-3">Kamar yang Tersedia</h2>
-					<!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p> -->
 				</div>
 			</div>
+			<?php if(session()->getFlashdata('success')) : ?>
+			<div class="row">
+				<div class="col-12 col-md-12">
+					<div class="alert alert-success alert-dismissible fade show" role="alert">
+						<i class="bi bi-check-circle"></i> 
+						<?= session()->getFlashdata('success'); ?>
+					</div>
+				</div>
+			</div>
+			<?php elseif(session()->getFlashdata('error')) : ?>
+			<div class="row">
+				<div class="col-12 col-md-12">
+					<div class="alert alert-danger alert-dismissible fade show" role="alert">
+						<i class="bi bi-check-circle"></i> 
+						<?= session()->getFlashdata('error'); ?>
+					</div>
+				</div>
+			</div>
+			<?php endif; ?>
 			<div class="row">
 			<?php foreach ($kamar as $k) : ?>
 				<div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-lg-0">
@@ -107,54 +97,63 @@
 										data-bs-target="#inlineForm<?= $k['id_kamar'] ?>">Order</button>
 
                                 <!-- form Modal -->
-                                <div class="modal fade text-left" id="inlineForm<?= $k['id_kamar'] ?>" tabindex="-1" role="dialog"
-                                    aria-labelledby="myModalLabel33" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
-                                        role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h4 class="modal-title" id="myModalLabel33">Form Pemesanan</h4>
-                                                <button type="button" class="close" data-bs-dismiss="modal"
-                                                    aria-label="Close">
-                                                    <i data-feather="x"></i>
-                                                </button>
-                                            </div>
-                                            <form action="#">
-                                                <div class="modal-body">
-													<!-- username -->
-													<input type="hidden" value="<?= user()->id; ?>" class="form-control" disabled>
-													<!-- id kamar -->
-                                                    <label>ID Kamar: </label>
-                                                    <div class="form-group">
-                                                        <input type="text" value="<?= $k['nama_kamar'] ?>" class="form-control" disabled>
-                                                    </div>
-													<!-- durasi -->
-                                                    <label>Durasi</label>
-													<select class="custom-select">
-														<option value="3">3 Bulan</option>
-														<option value="6">6 Bulan</option>
-														<option value="9">9 Bulan</option>
-														<option value="12">1 Tahun</option>
-														<option value="18">1,5 Tahun</option>
-														<option value="24">2 Tahun</option>
-													</select>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-light-secondary"
-                                                        data-bs-dismiss="modal">
-                                                        <i class="bx bx-x d-block d-sm-none"></i>
-                                                        <span class="d-none d-sm-block">Close</span>
-                                                    </button>
-                                                    <button type="button" class="btn btn-primary ml-1"
-                                                        data-bs-dismiss="modal">
-                                                        <i class="bx bx-check d-block d-sm-none"></i>
-                                                        <span class="d-none d-sm-block">login</span>
-                                                    </button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
+								<form action="/pesan" method="post">
+									<div class="modal fade text-left" id="inlineForm<?= $k['id_kamar'] ?>" tabindex="-1" role="dialog"
+										aria-labelledby="myModalLabel33" aria-hidden="true">
+										<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+											role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h4 class="modal-title" id="myModalLabel33">Form Pemesanan <?= $k['nama_kamar'] ?></h4>
+													<button type="button" class="close" data-bs-dismiss="modal"
+														aria-label="Close">
+														<i data-feather="x"></i>
+													</button>
+												</div>
+												<form action="#">
+													<div class="modal-body">
+														<!-- id kamar -->
+														<input type="hidden" value="<?= $k['id_kamar'] ?>" class="form-control" name="id_kamar">
+														<!-- id penghuni -->
+														<input type="hidden" value="<?= user()->id; ?>" class="form-control" name="id_penghuni">
+														<!-- pengajuan tgls -->
+														<label>Pengajuan Tinggal di Kos: </label>
+														<div class="form-group">
+															<input type="date" class="form-control" name="pengajuan_tgl">
+														</div>
+														<!-- durasi -->
+														<label>Rencana Lama Tinggal:</label>
+														<div class="form-group">
+															<select class="custom-select" name="durasi">
+																<option value="3">3 Bulan</option>
+																<option value="6">6 Bulan</option>
+																<option value="9">9 Bulan</option>
+																<option value="12">1 Tahun</option>
+																<option value="18">1,5 Tahun</option>
+																<option value="24">2 Tahun</option>
+															</select>
+														</div>
+														<!-- status -->
+														<input type="hidden" value="Menunggu Verifikasi" class="form-control" name="status">
+														
+													</div>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-light-secondary"
+															data-bs-dismiss="modal">
+															<i class="bx bx-x d-block d-sm-none"></i>
+															<span class="d-none d-sm-block">Close</span>
+														</button>
+														<button type="submit" class="btn btn-primary ml-1"
+															data-bs-dismiss="modal">
+															<i class="bx bx-check d-block d-sm-none"></i>
+															<span class="d-none d-sm-block">Ajukan Pesanan</span>
+														</button>
+													</div>
+												</form>
+											</div>
+										</div>
+									</div>
+								</form>
 
 								<?php else: ?>
 								<div class="modal-danger me-1 mb-1 d-inline-block">
@@ -179,11 +178,6 @@
 													Jika anda yakin ingin memesan kamar ini, silakan untuk membuat akun khusus penghuni terlebih dahulu!
 												</div>
 												<div class="modal-footer">
-													<!-- <button type="button" class="btn btn-light-secondary"
-														data-bs-dismiss="modal">
-														<i class="bx bx-x d-block d-sm-none"></i>
-														<span class="d-none d-sm-block">Close</span>
-													</button> -->
 													<button type="button" class="btn btn-danger ml-1"
 														data-bs-dismiss="modal">
 														<i class="bx bx-check d-block d-sm-none"></i>

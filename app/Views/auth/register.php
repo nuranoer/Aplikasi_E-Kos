@@ -10,7 +10,7 @@
                 <div id="auth-left">
                     <a href="/register"><img src="assets/images/logo/logo.svg" alt="Logo" width="100"></a>
                     <h1 class="auth-title"><?=lang('Auth.register')?></h1>
-                    <p class="auth-subtitle mb-1">Kost Annisa</p>
+                    <p class="fs-4 mb-1">Penghuni Kost Annisa</p>
 
                     <?= view('Myth\Auth\Views\_message_block') ?>
                     
@@ -45,12 +45,12 @@
                     </form>
                     <div class="text-center mt-5 text-lg fs-6">
                         <p class='text-gray-600'><?=lang('Auth.alreadyRegistered')?> <a href="<?= url_to('login') ?>"><?=lang('Auth.signIn')?></a></p>
+                        <p class='text-gray-600'></p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-7 d-none d-lg-block">
                 <div id="auth-right">
-
                 </div>
             </div>
         </div>
