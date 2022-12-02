@@ -43,6 +43,7 @@ $routes->get('/info', 'Pengunjung::info');
 // Admin
 $routes->get('/admin', 'Admin::index', ['filter' => 'role:admin']);
 $routes->get('/datapenghuni', 'Admin::datapenghuni', ['filter' => 'role:admin']);
+$routes->get('/datapemesanan', 'Admin::datapemesanan', ['filter' => 'role:admin']);
 $routes->get('/datakamar', 'Kamar::datakamar', ['filter' => 'role:admin']);
 $routes->get('/formkamar', 'Kamar::formkamar', ['filter' => 'role:admin']);
 $routes->post('/store', 'Kamar::store', ['filter' => 'role:admin']);
@@ -51,8 +52,8 @@ $routes->get('/deletekamar/(:num)', 'Kamar::delete/$1', ['filter' => 'role:admin
 // Penghuni
 $routes->get('dashboard', 'Penghuni::index');
 $routes->get('/profile', 'Penghuni::profile');
-$routes->post('/pesan', 'Penghuni::pesan');
-$routes->get('/riwayat', 'Penghuni::riwayat');
+$routes->post('/pesan', 'Penghuni::pesan', ['filter' => 'role:penghuni']);
+$routes->get('/riwayat', 'Penghuni::riwayat', ['filter' => 'role:penghuni']);
 
 
 

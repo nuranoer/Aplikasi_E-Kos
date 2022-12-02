@@ -13,28 +13,16 @@ class pemesananModel extends Model
     protected $useTimestamps = true;
     protected $allowedFields = ['id_kamar', 'id_penghuni', 'pengajuan_tgl', 'durasi','status','keterangan'];
 
-    // protected $validationRules = [
-    //     'id_kamar' => 'required',
-    //     'id_penghuni' => 'required',
-    //     'tanggal_mulai' => 'required',
-    //     'durasi' => 'required',
-    // ];
-
-    // protected $validationMessages = [
-    //     'id_kamar' => [
-    //         'required' => 'Kamar harus dipilih, jika kosong isi dari master'
-    //     ],
-    //     'id_penghuni' => [
-    //         'required' => 'Penghuni harus dipilih, jika kosong isi dari master'
-    //     ],
-    //     'tanggal_mulai' => [
-    //         'required' => 'tanggal harus diisi'
-    //     ],
-    //     'durasi' => [
-    //         'required' => 'durasi harus diisi'
-    //     ],
-    // ];
-
+    public function getAllData()
+    {
+    	$builder = $this->db->table('pemesanan');
+        $builder->select('id_pemesanan, nama_kamar, username, fullname, user_image, email, DATE_FORMAT(pengajuan_tgl, "%d %M %Y") as pengajuan, durasi, pemesanan.status as status_pemesanan, status_kamar, gambar, keterangan, pemesanan.created_at AS tgl_pesan');
+        $builder->join('users','pemesanan.id_penghuni=users.id');
+        $builder->join('kamar','pemesanan.id_kamar=kamar.id_kamar');
+        $query = $builder->get();
+        return $query->getResult();
+    }
+    
     public function getHistory()
     {
     	$builder = $this->db->table('pemesanan');

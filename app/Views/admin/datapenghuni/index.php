@@ -48,9 +48,10 @@
                     </tbody>
                 </table>
 
+                <?php foreach ($users as $row) :?>
                 <!--scrolling content Modal -->
                 <div class="modal fade" id="modalDetail<?= $row->userid; ?>" tabindex="-1" role="dialog"
-                    aria-labelledby="nama_kamar" aria-hidden="true">
+                    aria-labelledby="username" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-scrollable" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -77,6 +78,7 @@
                         </div>
                     </div>
                 </div>
+                <?php endforeach;?>
             </div>
         </div>
 

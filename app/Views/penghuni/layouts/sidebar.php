@@ -44,11 +44,19 @@
                     </a>
                 </li>
                 <li
-                    class="sidebar-item">
-                    <a href="/rekappembayaran" class='sidebar-link'>
+                    class="sidebar-item has-sub">
+                    <a href="/kelolapembayaran" class='sidebar-link'>
                         <i class="bi bi-cash"></i>
-                        <span>Rekap Pembayaran</span>
+                        <span>Kelola Pembayaran</span>
                     </a>
+                    <ul class="submenu">
+                        <li class="submenu-item">
+                            <a href="/datapemesanan">Data Pemesanan Kamar</a>
+                        </li>
+                        <li class="submenu-item">
+                            <a href="/datapembayaran">Pembayaran Bulanan</a>
+                        </li>
+                    </ul>
                 </li>
                 <li
                     class="sidebar-item ">
