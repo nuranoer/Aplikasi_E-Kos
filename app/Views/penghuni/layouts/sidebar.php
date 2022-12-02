@@ -66,11 +66,19 @@
                     </a>
                 </li>
                 <li
-                    class="sidebar-item">
+                    class="sidebar-item has-sub">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-cash"></i>
-                        <span>Pembayaran Kos Bulanan</span>
+                        <span>Pembayaran Kos</span>
                     </a>
+                    <ul class="submenu">
+                        <li class="submenu-item">
+                            <a href="/riwayat">Riwayat Pemesanan</a>
+                        </li>
+                        <li class="submenu-item">
+                            <a href="#">Pembayaran Bulanan</a>
+                        </li>
+                    </ul>
                 </li>     
                 <?php endif; ?>
 

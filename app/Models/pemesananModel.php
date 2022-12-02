@@ -35,13 +35,16 @@ class pemesananModel extends Model
     //     ],
     // ];
 
-    // public function get_data()
-    // {
-    // 	return $this->db->table($this->table)
-	//     	->join('kamar', 'kamar.id_kamar = '.$this->table.'id_kamar', 'left')
-    //         ->select('pemesanan.*, kamar.nama_kamar AS nama_kamar')
-	//     	->orderBy($this->table.'.id_kamar', 'desc')->get()->getResultObject();
-    // }
+    public function getHistory()
+    {
+    	$builder = $this->db->table('pemesanan');
+        $builder->select('nama_kamar, username, DATE_FORMAT(pengajuan_tgl, "%d %M %Y") as pengajuan, durasi, pemesanan.status as status_pemesanan, keterangan, pemesanan.created_at AS tgl_pesan');
+        $builder->join('users','pemesanan.id_penghuni=users.id');
+        $builder->join('kamar','pemesanan.id_kamar=kamar.id_kamar');
+        $builder->where('pemesanan.id_penghuni', user()->id);
+        $query = $builder->get();
+        return $query->getResult();
+    }
 
     // public function get_data2()
     // {

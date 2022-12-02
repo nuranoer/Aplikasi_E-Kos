@@ -52,6 +52,7 @@ $routes->get('/deletekamar/(:num)', 'Kamar::delete/$1', ['filter' => 'role:admin
 $routes->get('dashboard', 'Penghuni::index');
 $routes->get('/profile', 'Penghuni::profile');
 $routes->post('/pesan', 'Penghuni::pesan');
+$routes->get('/riwayat', 'Penghuni::riwayat');
 
 
 

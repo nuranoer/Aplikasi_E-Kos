@@ -76,6 +76,15 @@ class Penghuni extends BaseController
         return view('/info');
     }
 
+    public function riwayat()
+    {
+        $data = [
+            'title' => 'History Pemesanan',
+            'pemesanan' => $this->pemesanan->getHistory()
+        ];
+        return view('penghuni/riwayat', $data);
+    }
+
     // public function store()
     // {
     //     $data = [
