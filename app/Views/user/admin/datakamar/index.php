@@ -52,7 +52,7 @@
                             </td>
                             <td>
                                 <!-- btn edit -->
-                                <a href="#" class="btn icon btn-warning"><i class="bi bi-pencil"></i></a>
+                                <a href="/editkamar-<?= $k['id_kamar'] ?>" class="btn icon btn-warning"><i class="bi bi-pencil"></i></a>
                                 <!-- btn detail using modal -->
                                 <button class="btn icon btn-primary btn-detail"  type="button" data-bs-toggle="modal" data-bs-target="#modalDetail<?= $k['id_kamar'] ?>"><i class="bi bi-info-circle"></i></button>
                                 <!-- btn delete -->
