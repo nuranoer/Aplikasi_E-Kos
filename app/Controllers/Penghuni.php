@@ -19,22 +19,6 @@ class Penghuni extends BaseController
         // $this->penghuni->asObject();
     }
 
-    public function index()
-    {
-        $data = [
-            'title' => 'Beranda'
-        ];
-        return view('user/penghuni/dashboard', $data);
-    }
-    
-    public function profile()
-    {
-        $data = [
-            'title' => 'Profile Saya'
-        ];
-        return view('user/penghuni/profile', $data);
-    }
-
     public function pesan()
     {
         $validasi = !$this->validate([

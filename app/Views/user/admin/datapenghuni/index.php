@@ -68,6 +68,10 @@
                                 <p><?= $row->fullname; ?></p>
                                 <h6>Email :</h6>
                                 <p><?= $row->email; ?></p>
+                                <h6>No Hp :</h6>
+                                <p><?= $row->no_hp; ?></p>
+                                <h6>Alamat Asli :</h6>
+                                <p><?= $row->alamat; ?></p>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-primary ml-1" data-bs-dismiss="modal">

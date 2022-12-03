@@ -40,6 +40,11 @@ $routes->set404Override();
 $routes->get('/', 'Pengunjung::index');
 $routes->get('/info', 'Pengunjung::info');
 
+// Layout User (Admin dan Penghuni)
+$routes->get('dashboard', 'User::index', ['filter' => 'role:admin,penghuni']);
+$routes->get('/profile', 'User::profile', ['filter' => 'role:admin,penghuni']);
+$routes->get('/editprofile', 'User::editprofile', ['filter' => 'role:admin,penghuni']);
+
 // Admin
 $routes->get('/admin', 'Admin::index', ['filter' => 'role:admin']);
 $routes->get('/datapenghuni', 'Admin::datapenghuni', ['filter' => 'role:admin']);
@@ -50,8 +55,6 @@ $routes->post('/store', 'Kamar::store', ['filter' => 'role:admin']);
 $routes->get('/deletekamar/(:num)', 'Kamar::delete/$1', ['filter' => 'role:admin']);
 
 // Penghuni
-$routes->get('dashboard', 'Penghuni::index');
-$routes->get('/profile', 'Penghuni::profile');
 $routes->post('/pesan', 'Penghuni::pesan', ['filter' => 'role:penghuni']);
 $routes->get('/riwayat', 'Penghuni::riwayat', ['filter' => 'role:penghuni']);
 
