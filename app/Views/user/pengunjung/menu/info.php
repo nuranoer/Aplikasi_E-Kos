@@ -98,6 +98,7 @@
 
                                 <!-- form Modal -->
 								<form action="/pesan" method="post">
+								<?= csrf_field(); ?>
 									<div class="modal fade text-left" id="inlineForm<?= $k['id_kamar'] ?>" tabindex="-1" role="dialog"
 										aria-labelledby="myModalLabel33" aria-hidden="true">
 										<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"

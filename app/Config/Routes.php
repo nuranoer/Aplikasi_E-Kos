@@ -44,6 +44,7 @@ $routes->get('/info', 'Pengunjung::info');
 $routes->get('dashboard', 'User::index', ['filter' => 'role:admin,penghuni']);
 $routes->get('/profile', 'User::profile', ['filter' => 'role:admin,penghuni']);
 $routes->get('/editprofile', 'User::editprofile', ['filter' => 'role:admin,penghuni']);
+$routes->post('/updateprofile/(:num)', 'User::updateprofile/$1', ['filter' => 'role:admin,penghuni']);
 
 // Admin
 $routes->get('/admin', 'Admin::index', ['filter' => 'role:admin']);

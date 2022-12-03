@@ -15,62 +15,46 @@
                     </h4>
                 </div>
                 <div class="card-body">
-                    <form class="form form-vertical" action="/store" method="post" enctype="multipart/form-data">
+                    <form class="form form-vertical" action="/updateprofile/<?= $datauser->id; ?>" method="post" enctype="multipart/form-data">
+                        <?= csrf_field(); ?>
                         <div class="form-body">
                             <div class="row">
+                                <input type="hidden" class="form-control" name="id" value="">
                                 <div class="col-12">
                                     <div class="form-group">
                                         <label for="Username">Username</label>
-                                        <input type="text" id="Username" class="form-control <?= ($validation->hasError('username')) ? 'is-invalid' : '' ?>" name="username" value="<?= user()->username; ?>">
-                                        <div class="invalid-feedback">
-                                            <?= $validation->getError('username') ?>
-                                        </div>
+                                        <input type="text" id="Username" class="form-control" name="username" value="<?= $datauser->username; ?>">
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
                                         <label for="Fullname">Nama Lengkap</label>
-                                        <input type="text" class="form-control <?= ($validation->hasError('fullname')) ? 'is-invalid' : '' ?>" id="Fullname" name="fullname" value="<?= user()->fullname; ?>">
-                                        <div class="invalid-feedback">
-                                            <?= $validation->getError('fullname') ?>
-                                        </div>
+                                        <input type="text" class="form-control" id="Fullname" name="fullname" value="<?= $datauser->fullname; ?>">
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
                                         <label for="Email">Email</label>
-                                        <input type="text" id="Email" class="form-control <?= ($validation->hasError('email')) ? 'is-invalid' : '' ?>" name="email" value="<?= user()->email; ?>">
-                                        <div class="invalid-feedback">
-                                            <?= $validation->getError('email') ?>
-                                        </div>
+                                        <input type="text" id="Email" class="form-control" name="email" value="<?= $datauser->email; ?>">
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
                                         <label for="Nohp">No Hp</label>
-                                        <input type="text" id="Nohp" class="form-control <?= ($validation->hasError('no_hp')) ? 'is-invalid' : '' ?>" name="no_hp" value="<?= user()->no_hp; ?>">
-                                        <div class="invalid-feedback">
-                                            <?= $validation->getError('no_hp') ?>
-                                        </div>
+                                        <input type="text" id="Nohp" class="form-control" name="no_hp" value="<?= $datauser->no_hp; ?>">
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
                                         <label for="Alamat">Alamat</label>
-                                        <input type="text" id="Alamat" class="form-control <?= ($validation->hasError('alamat')) ? 'is-invalid' : '' ?>" name="alamat" value="<?= user()->alamat; ?>">
-                                        <div class="invalid-feedback">
-                                            <?= $validation->getError('alamat') ?>
-                                        </div>
+                                        <input type="text" id="Alamat" class="form-control" name="alamat" value="<?= $datauser->alamat; ?>">
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group">
                                         <label for="foto-profile">Foto Profil</label>
-                                        <input type="file" id="foto-profile" class="form-control <?= ($validation->hasError('user_image')) ? 'is-invalid' : '' ?>"
-                                            name="user_image" value="<?= user()->user_image; ?>">
-                                        <div class="invalid-feedback">
-                                            <?= $validation->getError('user_image')?>
-                                        </div>
+                                        <input type="file" id="foto-profile" class="form-control"
+                                            name="user_image" value="<?= $datauser->user_image; ?>">
                                     </div>
                                 </div>
                                 <div class="col-12 d-flex justify-content-end">

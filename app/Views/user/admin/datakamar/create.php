@@ -35,6 +35,7 @@
                     <div class="card-content">
                         <div class="card-body">
                             <form class="form form-vertical" action="/store" method="post" enctype="multipart/form-data">
+                                <?= csrf_field(); ?>
                                 <div class="form-body">
                                     <div class="row">
                                         <div class="col-12">

@@ -2,6 +2,18 @@
 
 <?= $this->section('content'); ?>
 
+    <?php if(session()->getFlashdata('success')) : ?>
+        <div class="row">
+            <div class="col-12 col-md-12">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <i class="bi bi-check-circle"></i> 
+                    <?= session()->getFlashdata('success'); ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
+
     <div class="page-heading">
         <section class="section">
             <div class="card">
