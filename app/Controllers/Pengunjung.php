@@ -14,7 +14,7 @@ class Pengunjung extends BaseController
 
     public function index()
     {
-        return view('pengunjung/menu/index');
+        return view('user/pengunjung/menu/index');
     }
     
     public function info()
@@ -22,6 +22,6 @@ class Pengunjung extends BaseController
         $data = [
             'kamar' => $this->kamarModel->where('status_kamar','Available')->findAll()
         ];
-        return view('pengunjung/menu/info', $data);
+        return view('user/pengunjung/menu/info', $data);
     }
 }

@@ -22,7 +22,7 @@ class Kamar extends BaseController
             'title' => 'Data Kamar | Admin Kost',
             'kamar' => $this->kamarModel->findAll(),
         ];
-        echo view('admin/datakamar/index', $data);
+        echo view('user/admin/datakamar/index', $data);
     }
     
     public function formkamar()
@@ -31,7 +31,7 @@ class Kamar extends BaseController
             'title' => 'Form Kamar | Admin Kost',
             'validation' => \Config\Services::validation()
         ];
-        echo view('admin/datakamar/create', $data);
+        echo view('user/admin/datakamar/create', $data);
     }
 
     public function store()

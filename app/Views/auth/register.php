@@ -45,7 +45,7 @@
                     </form>
                     <div class="text-center mt-5 text-lg fs-6">
                         <p class='text-gray-600'><?=lang('Auth.alreadyRegistered')?> <a href="<?= url_to('login') ?>"><?=lang('Auth.signIn')?></a></p>
-                        <p class='text-gray-600'></p>
+                        <a href="/">Ke Halaman Utama</a>
                     </div>
                 </div>
             </div>

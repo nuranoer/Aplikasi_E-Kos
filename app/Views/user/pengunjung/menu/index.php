@@ -1,4 +1,4 @@
-<?= $this->extend('pengunjung/layouts/templates'); ?>
+<?= $this->extend('user/pengunjung/layouts/templates'); ?>
 
 <?= $this->section('content'); ?>
 

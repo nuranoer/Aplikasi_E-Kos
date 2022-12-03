@@ -24,7 +24,7 @@ class Penghuni extends BaseController
         $data = [
             'title' => 'Beranda'
         ];
-        return view('penghuni/dashboard', $data);
+        return view('user/penghuni/dashboard', $data);
     }
     
     public function profile()
@@ -32,7 +32,7 @@ class Penghuni extends BaseController
         $data = [
             'title' => 'Profile Saya'
         ];
-        return view('penghuni/profile', $data);
+        return view('user/penghuni/profile', $data);
     }
 
     public function pesan()
@@ -82,7 +82,7 @@ class Penghuni extends BaseController
             'title' => 'History Pemesanan',
             'pemesanan' => $this->pemesanan->getHistory()
         ];
-        return view('penghuni/riwayat', $data);
+        return view('user/penghuni/riwayat', $data);
     }
 
     // public function store()

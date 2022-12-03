@@ -50,6 +50,9 @@
                     </div>
                         <button type="submit" class="btn btn-primary btn-block btn-lg shadow-lg mt-2"><?=lang('Auth.loginAction')?></button>
                     </form>
+                    <div class="text-center mt-4 text-lg fs-6">
+                        <a href="/">Ke Halaman Utama</a>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-7 d-none d-lg-block">

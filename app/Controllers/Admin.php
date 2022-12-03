@@ -18,7 +18,7 @@ class Admin extends BaseController
         $data = [
             'title' => 'Beranda'
         ];
-        return view('admin/dashboard', $data);
+        return view('user/admin/dashboard', $data);
     }
     
     public function datapenghuni()
@@ -27,7 +27,7 @@ class Admin extends BaseController
             'title' => 'Data Penghuni',
             'users' => $this->dataModel->getData()
         ];
-        return view('admin/datapenghuni/index', $data);
+        return view('user/admin/datapenghuni/index', $data);
     }
     
     public function datapemesanan()
@@ -36,6 +36,6 @@ class Admin extends BaseController
             'title' => 'Data Pemesanan',
             'pemesanan' => $this->PemesananModel->getAllData()
         ];
-        return view('admin/datapembayaran/pemesanan', $data);
+        return view('user/admin/datapembayaran/pemesanan', $data);
     }
 }

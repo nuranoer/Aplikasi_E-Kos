@@ -1,4 +1,4 @@
-<?= $this->extend('penghuni/layouts/templates'); ?>
+<?= $this->extend('userlayout/templates'); ?>
 
 <?= $this->section('content'); ?>
 

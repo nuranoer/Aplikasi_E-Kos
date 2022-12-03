@@ -39,7 +39,7 @@
 		<div class="site-mobile-menu-body"></div>
 	</div>
 
-	<?= $this->include('pengunjung/layouts/navbar'); ?>
+	<?= $this->include('user/pengunjung/layouts/navbar'); ?>
 
 	<?= $this->renderSection('content'); ?>
 
