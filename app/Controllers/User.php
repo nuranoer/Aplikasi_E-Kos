@@ -8,17 +8,22 @@ use Exception;
 class User extends BaseController
 {
     protected $userModel;
+    protected $pemesananModel;
 
     public function __construct()
     {
         $this->userModel = new \Myth\Auth\Models\UserModel();
+        $this->pemesananModel = new \App\Models\pemesananModel();
     }
 
 
     public function index()
     {
         $data = [
-            'title' => 'Beranda'
+            'title' => 'Beranda',
+            'kamar_status' => $this->pemesananModel->getKamarStatusPenghuni(),
+            // 'disetujui' => $this->pemesananModel->getTotalStatusDisetujui(),
+            // 'ditolak' => $this->pemesananModel->getTotalStatusDitolak()
         ];
         return view('user/dashboard', $data);
     }
