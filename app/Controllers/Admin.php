@@ -36,6 +36,17 @@ class Admin extends BaseController
             'title' => 'Data Pemesanan',
             'pemesanan' => $this->PemesananModel->getAllData()
         ];
-        return view('user/admin/datapembayaran/pemesanan', $data);
+        return view('user/admin/datapemesanan/pemesanan', $data);
+    }
+
+    public function updatepemesanan($id)
+    {
+        $data = [
+            'title' => 'Update Pemesanan',
+            'pemesanan' => $this->PemesananModel->getIdPemesanan($id),
+            'validation' => \Config\Services::validation()
+        ];
+        // dd($data);
+        return view('user/admin/datapemesanan/update', $data);
     }
 }

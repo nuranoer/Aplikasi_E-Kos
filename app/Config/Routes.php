@@ -49,13 +49,14 @@ $routes->post('/updateprofile/(:num)', 'User::updateprofile/$1', ['filter' => 'r
 // Admin
 $routes->get('/admin', 'Admin::index', ['filter' => 'role:admin']);
 $routes->get('/datapenghuni', 'Admin::datapenghuni', ['filter' => 'role:admin']);
-$routes->get('/datapemesanan', 'Admin::datapemesanan', ['filter' => 'role:admin']);
 $routes->get('/datakamar', 'Kamar::datakamar', ['filter' => 'role:admin']);
 $routes->get('/formkamar', 'Kamar::formkamar', ['filter' => 'role:admin']);
 $routes->post('/store', 'Kamar::store', ['filter' => 'role:admin']);
 $routes->get('/deletekamar/(:num)', 'Kamar::delete/$1', ['filter' => 'role:admin']);
 $routes->get('/editkamar-(:num)', 'Kamar::editkamar/$1', ['filter' => 'role:admin']);
 $routes->post('/updatekamar/(:num)', 'Kamar::updatekamar/$1', ['filter' => 'role:admin']);
+$routes->get('/datapemesanan', 'Admin::datapemesanan', ['filter' => 'role:admin']);
+$routes->get('/updatepemesanan-(:num)', 'Admin::updatepemesanan/$1', ['filter' => 'role:admin']);
 
 // Penghuni
 $routes->post('/pesan', 'Penghuni::pesan', ['filter' => 'role:penghuni']);

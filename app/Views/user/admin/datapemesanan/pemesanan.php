@@ -37,11 +37,9 @@
                             <td><?= $row->tgl_pesan; ?></td>
                             <td>
                                 <!-- btn edit -->
-                                <a href="#" class="btn icon btn-warning"><i class="bi bi-pencil"></i></a>
+                                <a href="/updatepemesanan-<?= $row->id_pemesanan; ?>" class="btn icon btn-warning"><i class="bi bi-pencil"></i></a>
                                 <!-- btn detail using modal -->
                                 <button class="btn icon btn-primary btn-detail"  type="button" data-bs-toggle="modal" data-bs-target="#modalDetail<?= $row->id_pemesanan; ?>"><i class="bi bi-info-circle"></i></button>
-                                <!-- btn delete -->
-                                <button type="button" class="btn icon btn-danger" data-bs-toggle="modal" data-bs-target="#danger"><i class="bi bi-trash3"></i></button>
                             </td>
                         </tr>
                         <?php endforeach;?>
@@ -75,7 +73,7 @@
                                                 <img src="assets/images/faces/<?= $row->user_image; ?>" alt="Face 1" />
                                             </div>
                                         </div>
-                                        <div class="col-5">
+                                        <div class="col-10">
                                             <div class="ms-3 name">
                                                 <h5 class="font-bold"><?= $row->fullname; ?></h5>
                                                 <h6 class="text-muted"><?= $row->username; ?></h6>
