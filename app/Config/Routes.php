@@ -57,6 +57,7 @@ $routes->get('/editkamar-(:num)', 'Kamar::editkamar/$1', ['filter' => 'role:admi
 $routes->post('/updatekamar/(:num)', 'Kamar::updatekamar/$1', ['filter' => 'role:admin']);
 $routes->get('/datapemesanan', 'Admin::datapemesanan', ['filter' => 'role:admin']);
 $routes->get('/updatepemesanan-(:num)', 'Admin::updatepemesanan/$1', ['filter' => 'role:admin']);
+$routes->post('/editpemesanan/(:num)', 'Admin::editpemesanan/$1', ['filter' => 'role:admin']);
 
 // Penghuni
 $routes->post('/pesan', 'Penghuni::pesan', ['filter' => 'role:penghuni']);

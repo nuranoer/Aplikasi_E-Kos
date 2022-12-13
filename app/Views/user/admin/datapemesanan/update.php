@@ -34,7 +34,7 @@
                 <div class="card">
                     <div class="card-content">
                         <div class="card-body">
-                            <form class="form form-vertical" action="/updatekamar/<?= $pemesanan[0]->id_pemesanan; ?>" method="post" enctype="multipart/form-data">
+                            <form class="form form-vertical" action="/editpemesanan/<?= $pemesanan[0]->id_pemesanan; ?>" method="post" enctype="multipart/form-data">
                                 <?= csrf_field(); ?>
                                 <div class="form-body">
                                     <div class="row">
@@ -65,7 +65,7 @@
                                         <div class="col-12">
                                             <fieldset class="form-group">
                                                 <label for="status">Status Pemesanan</label>
-                                                <select class="form-select" name="status_pemesanan" id="status">
+                                                <select class="form-select" name="status" id="status">
                                                     <option value="Menunggu Verifikasi" <?= $pemesanan[0]->status_pemesanan == 'Menunggu Verifikasi'? 'selected':''?>>Menunggu Verifikasi</option>
                                                     <option value="Disetujui" <?= $pemesanan[0]->status_pemesanan == 'Disetujui'? 'selected':''?>>Disetujui</option>
                                                     <option value="Ditolak" <?= $pemesanan[0]->status_pemesanan == 'Ditolak'? 'selected':''?>>Ditolak</option>
@@ -74,8 +74,8 @@
                                         </div>
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <label for="deskripsi">Keterangan</label>
-                                                <textarea class="form-control <?= ($validation->hasError('keterangan')) ? 'is-invalid' : '' ?>" id="deskripsi" name="keterangan" rows="3"><?= old('keterangan'); ?></textarea>
+                                                <label for="keterangan">Keterangan</label>
+                                                <textarea class="form-control <?= ($validation->hasError('keterangan')) ? 'is-invalid' : '' ?>" id="keterangan" name="keterangan" rows="3"><?= old('keterangan'); ?></textarea>
                                             </div>
                                         </div>
                                         <div class="col-12 d-flex justify-content-end">

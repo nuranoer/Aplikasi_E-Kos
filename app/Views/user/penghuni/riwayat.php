@@ -27,7 +27,7 @@
                                     <td><?= $no++; ?></td>
                                     <td><?= $p->nama_kamar ?></td>
                                     <td><?= $p->pengajuan ?></td>
-                                    <td><?= $p->durasi ?></td>
+                                    <td><?= $p->durasi ?> bulan</td>
                                     <td>
                                         <span class="badge <?= ($p->status_pemesanan == 'Menunggu Verifikasi') ? 'bg-warning' : 'bg-success' ?>"><?= $p->status_pemesanan ?></span>
                                     </td>

@@ -49,4 +49,37 @@ class Admin extends BaseController
         // dd($data);
         return view('user/admin/datapemesanan/update', $data);
     }
+
+    public function editpemesanan($id)
+    {
+        $validasi = !$this->validate([
+            'status' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'status pemesanan harus dipilih'
+                ]
+            ],
+            'keterangan' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'keterangan harus diisi'
+                ]
+            ]
+        ]);
+
+        if($validasi){
+            session()->setFlashdata('error','Mohon cek kembali data Anda!');
+            return redirect()->to('/updatepemesanan-' . $id)->withInput();
+        }
+
+        else{
+            $this->PemesananModel->save([
+                'id_pemesanan' => $id,
+                'status' => $this->request->getVar('status'),
+                'keterangan' => $this->request->getVar('keterangan')
+            ]);
+            session()->setFlashdata('pesan','Data Pemesanan berhasil diubah!');
+            return redirect()->to('/datapemesanan')->withInput();
+        }
+    }
 }

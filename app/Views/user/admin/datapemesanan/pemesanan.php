@@ -4,6 +4,17 @@
                 
 <div class="page-heading">
     <div class="page-title">
+    <?php if(session()->getFlashdata('success')) : ?>
+        <div class="row">
+            <div class="col-12 col-md-12">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <i class="bi bi-check-circle"></i> 
+                    <?= session()->getFlashdata('success'); ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
         <div class="row">
             <div class="col-12 col-md-6 order-md-1 order-last">
                 <h3>Data Pemesanan Kamar</h3>
@@ -32,7 +43,13 @@
                             <td><?= $row->username; ?></td>
                             <td><?= $row->nama_kamar; ?></td>
                             <td>
-                                <span class="badge <?= ($row->status_pemesanan == 'Menunggu Verifikasi') ? 'bg-warning' : 'bg-success' ?>"><?= $row->status_pemesanan ?></span>
+                                <?php if($row->status_pemesanan == 'Menunggu Verifikasi'): ?>
+                                    <span class="badge bg-warning"><?= $row->status_pemesanan ?></span>
+                                <?php elseif($row->status_pemesanan == 'Disetujui'): ?>
+                                    <span class="badge bg-success"><?= $row->status_pemesanan ?></span>
+                                <?php else: ?>
+                                    <span class="badge bg-danger"><?= $row->status_pemesanan ?></span>
+                                <?php endif; ?>
                             </td>
                             <td><?= $row->tgl_pesan; ?></td>
                             <td>
