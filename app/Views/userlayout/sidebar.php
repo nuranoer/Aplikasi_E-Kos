@@ -58,13 +58,13 @@
                         </li>
                     </ul>
                 </li>
-                <li
+                <!-- <li
                     class="sidebar-item ">
                     <a href="/komplain" class='sidebar-link'>
                         <i class="bi bi-chat-dots-fill"></i>
                         <span>Data Komplain</span>
                     </a>
-                </li>         
+                </li>          -->
                 <?php elseif(in_groups('penghuni')): ?>
                 <li
                     class="sidebar-item active ">
