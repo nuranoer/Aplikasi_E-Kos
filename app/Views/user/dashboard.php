@@ -143,7 +143,13 @@
                     </div>
                     <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                       <h6 class="text-muted font-semibold">Nama Kamar</h6>
-                      <h6 class="font-extrabold mb-0"><?= $kamar_status[0]->nama_kamar; ?> </h6> 
+                      <h6 class="font-extrabold mb-0">
+                        <?php if(empty($kamar_status[0]->nama_kamar)): ?>
+                          -
+                        <?php else: ?>
+                          <?= $kamar_status[0]->nama_kamar; ?>
+                        <?php endif; ?>
+                      </h6> 
                     </div>
                   </div>
                 </div>
@@ -162,12 +168,16 @@
                     </div>
                     <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                       <h6 class="text-muted font-semibold">Status</h6>
-                      <?php if($kamar_status[0]->status_pemesanan == 'Menunggu Verifikasi'): ?>
-                        <span class="badge bg-warning"><?= $kamar_status[0]->status_pemesanan; ?></span>
-                      <?php elseif($kamar_status[0]->status_pemesanan == 'Disetujui'): ?>
-                        <span class="badge bg-success"><?= $kamar_status[0]->status_pemesanan; ?></span>
+                      <?php if(empty($kamar_status[0]->status_pemesanan)): ?>
+                        -
                       <?php else: ?>
-                        <span class="badge bg-danger"><?= $kamar_status[0]->status_pemesanan; ?></span>
+                        <?php if($kamar_status[0]->status_pemesanan == 'Menunggu Verifikasi'): ?>
+                          <span class="badge bg-warning"><?= $kamar_status[0]->status_pemesanan; ?></span>
+                        <?php elseif($kamar_status[0]->status_pemesanan == 'Disetujui'): ?>
+                          <span class="badge bg-success"><?= $kamar_status[0]->status_pemesanan; ?></span>
+                        <?php else: ?>
+                          <span class="badge bg-danger"><?= $kamar_status[0]->status_pemesanan; ?></span>
+                        <?php endif; ?>
                       <?php endif; ?>
                     </div>
                   </div>
