@@ -6,6 +6,14 @@ use CodeIgniter\Model;
 class adminModel extends Model
 {
     protected $table      = 'admin';
+
+    public function getJumlahPenghuni(){
+        return $this->db->table('users')->where('username !=', 'adinepg')->countAllResults();
+    }
+    
+    public function getJumlahKamar(){
+        return $this->db->table('kamar')->countAllResults();
+    }
     
     function cek_login($username,$password)
     {

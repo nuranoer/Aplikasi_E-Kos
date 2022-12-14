@@ -8,11 +8,13 @@ use Exception;
 class User extends BaseController
 {
     protected $userModel;
+    protected $adminModel;
     protected $pemesananModel;
 
     public function __construct()
     {
         $this->userModel = new \Myth\Auth\Models\UserModel();
+        $this->adminModel = new \App\Models\adminModel();
         $this->pemesananModel = new \App\Models\pemesananModel();
     }
 
@@ -22,6 +24,8 @@ class User extends BaseController
         $data = [
             'title' => 'Beranda',
             'kamar_status' => $this->pemesananModel->getKamarStatusPenghuni(),
+            'jumlah_penghuni' => $this->adminModel->getJumlahPenghuni(),
+            'jumlah_kamar' => $this->adminModel->getJumlahKamar()
             // 'disetujui' => $this->pemesananModel->getTotalStatusDisetujui(),
             // 'ditolak' => $this->pemesananModel->getTotalStatusDitolak()
         ];

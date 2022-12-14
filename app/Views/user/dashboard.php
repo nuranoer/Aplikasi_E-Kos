@@ -20,7 +20,7 @@
       <section class="row">
         <div class="col-12 col-lg-12">
           <div class="row">
-            <div class="col-6 col-lg-3 col-md-6">
+            <!-- <div class="col-6 col-lg-3 col-md-6">
               <div class="card">
                 <div class="card-body px-4 py-4-5">
                   <div class="row">
@@ -59,8 +59,8 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-6 col-lg-3 col-md-6">
+            </div> -->
+            <div class="col-6 col-lg-6 col-md-6">
               <div class="card">
                 <div class="card-body px-4 py-4-5">
                   <div class="row">
@@ -72,14 +72,14 @@
                       </div>
                     </div>
                     <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                      <h6 class="text-muted font-semibold">Following</h6>
-                      <h6 class="font-extrabold mb-0">80.000</h6>
+                      <h6 class="text-muted font-semibold">Jumlah Penghuni</h6>
+                      <h6 class="font-extrabold mb-0"><?= $jumlah_penghuni; ?></h6>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-6 col-lg-3 col-md-6">
+            <div class="col-6 col-lg-6 col-md-6">
               <div class="card">
                 <div class="card-body px-4 py-4-5">
                   <div class="row">
@@ -91,8 +91,8 @@
                       </div>
                     </div>
                     <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                      <h6 class="text-muted font-semibold">Saved Post</h6>
-                      <h6 class="font-extrabold mb-0">112</h6>
+                      <h6 class="text-muted font-semibold">Jumlah Kamar</h6>
+                      <h6 class="font-extrabold mb-0"><?= $jumlah_kamar; ?></h6>
                     </div>
                   </div>
                 </div>
