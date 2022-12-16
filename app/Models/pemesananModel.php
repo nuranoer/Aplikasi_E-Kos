@@ -62,6 +62,15 @@ class pemesananModel extends Model
         $query = $builder->get();
         return $query->getResult();
     }
+    
+    public function getForm()
+    {
+        $builder = $this->db->table('pemesanan');
+        $builder->select('id_pemesanan');
+        $builder->where('id_penghuni', user()->id);
+        $query = $builder->get();
+        return $query->getResult();
+    }
 
     //menampilkan jumlah kamar yang disetujui admin di halaman utama Penghuni
     // public function getTotalStatusDisetujui() 

@@ -27,8 +27,8 @@
     <section class="section">
         <div class="card">
             <div class="card-body">
-                <a href="/formpembayaran" class="btn icon icon-left btn-primary"><i data-feather="edit"></i>Tambah Pembayaran</a>
-                <button class="btn icon btn-danger btn-detail"  type="button" data-bs-toggle="modal" data-bs-target="#modalDetail"><i data-feather="info"></i>Info Pembayaran</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#inlineForm"><i data-feather="edit"></i> Tambah Pembayaran</button>
+                <button class="btn icon btn-danger btn-detail"  type="button" data-bs-toggle="modal" data-bs-target="#info"><i data-feather="info"></i> Info Pembayaran</button>
                 <div class="table-responsive">
                     <table class="table table-lg">
                         <thead>
@@ -61,8 +61,75 @@
                     </table>
                 </div>
 
+                <!-- form Modal -->
+                <div class="modal fade text-left" id="inlineForm" tabindex="-1" role="dialog"
+                    aria-labelledby="myModalLabel33" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+                        role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="myModalLabel33">Form Pembayaran Bulanan</h4>
+                                <button type="button" class="close" data-bs-dismiss="modal"
+                                    aria-label="Close">
+                                    <i data-feather="x"></i>
+                                </button>
+                            </div>
+                            <form action="#" method="post">
+                            <?= csrf_field(); ?>
+                                <div class="modal-body">
+                                    <!-- id pemesanan -->
+                                    <?php if(empty($id_pemesanan[0]->id_pemesanan)): ?>
+                                    <input type="hidden" value="-" class="form-control" name="id_pemesanan">
+                                    <?php else: ?>
+                                    <input type="hidden" value="<?= $id_pemesanan[0]->id_pemesanan; ?>" class="form-control" name="id_pemesanan">
+                                    <?php endif; ?>
+                                    <!-- transfer -->
+                                    <div class="col-12">
+                                        <fieldset class="form-group">
+                                            <label>Transfer Via:</label>
+                                            <select class="form-select" name="transfer_via" id="transfer_via">
+                                                <option value="BRI" <?= old('transfer_via') == 'BRI'? 'selected':''?>>BRI</option>
+                                                <option value="BNI" <?= old('transfer_via') == 'BNI'? 'selected':''?>>BNI</option>
+                                                <option value="BCA" <?= old('transfer_via') == 'BCA'? 'selected':''?>>BCA</option>
+                                                <option value="LinkAja" <?= old('transfer_via') == 'LinkAja'? 'selected':''?>>LinkAja</option>
+                                                <option value="Dana" <?= old('transfer_via') == 'Dana'? 'selected':''?>>Dana</option>
+                                            </select>
+                                        </fieldset>
+                                    </div>
+                                    <!-- gambar / bukti pembayaran -->
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="bukti_pembayaran">Bukti Pembayaran</label>
+                                            <input type="file" id="bukti_pembayaran" class="form-control <?= ($validation->hasError('bukti_pembayaran')) ? 'is-invalid' : '' ?>"
+                                                name="bukti_pembayaran" value="<?= old('bukti_pembayaran'); ?>">
+                                            <div class="invalid-feedback">
+                                                <?= $validation->getError('bukti_pembayaran')?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- status pembayaran -->
+                                    <input type="hidden" value="Menunggu Verifikasi" class="form-control" name="status_pembayaran">
+                                    
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-light-secondary"
+                                        data-bs-dismiss="modal">
+                                        <i class="bx bx-x d-block d-sm-none"></i>
+                                        <span class="d-none d-sm-block">Close</span>
+                                    </button>
+                                    <button type="submit" class="btn btn-primary ml-1"
+                                        data-bs-dismiss="modal">
+                                        <i class="bx bx-check d-block d-sm-none"></i>
+                                        <span class="d-none d-sm-block">Ajukan Pesanan</span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
                 <!--scrolling content Modal -->
-                <div class="modal fade" id="modalDetail" tabindex="-1" role="dialog"
+                <div class="modal fade" id="info" tabindex="-1" role="dialog"
                     aria-labelledby="nama_kamar" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-scrollable" role="document">
                         <div class="modal-content">

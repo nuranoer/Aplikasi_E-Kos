@@ -72,7 +72,9 @@ class Penghuni extends BaseController
     public function pembayaran()
     {
         $data = [
-            'title' => 'Index Pembayaran'
+            'title' => 'Index Pembayaran',
+            'validation' => \Config\Services::validation(),
+            'id_pemesanan' => $this->pemesanan->getForm()
         ];
         return view('user/penghuni/pembayaran_bulanan', $data);
     }
