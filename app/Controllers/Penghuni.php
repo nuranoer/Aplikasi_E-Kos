@@ -69,6 +69,23 @@ class Penghuni extends BaseController
         return view('user/penghuni/riwayat', $data);
     }
 
+    public function pembayaran()
+    {
+        $data = [
+            'title' => 'Index Pembayaran'
+        ];
+        return view('user/penghuni/pembayaran_bulanan', $data);
+    }
+
+    public function formpembayaran()
+    {
+        $data = [
+            'title' => 'Form Pembayaran Bulanan',
+            'validation' => \Config\Services::validation()
+        ];
+        return view('user/penghuni/add_pembayaran', $data);
+    }
+
     // public function store()
     // {
     //     $data = [

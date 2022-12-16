@@ -84,7 +84,7 @@
                             <a href="/riwayat">Riwayat Pemesanan</a>
                         </li>
                         <li class="submenu-item">
-                            <a href="#">Pembayaran Bulanan</a>
+                            <a href="/pembayaran">Pembayaran Bulanan</a>
                         </li>
                     </ul>
                 </li>     

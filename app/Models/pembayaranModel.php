@@ -8,9 +8,9 @@ class pembayaranModel extends Model
 {
     protected $table      = 'pembayaran';
     protected $primaryKey = 'id_pembayaran';
-
+    protected $useTimestamps = true;
     protected $useAutoIncrement = true;
-    protected $allowedFields = ['id_penghuni', 'id_kamar', 'tanggal', 'nominal', 'gambar', 'status', 'bulan'];
+    protected $allowedFields = ['id_pemesanan', 'bukti_pembayaran', 'transfer_via', 'status_pembayaran'];
 
 
     public function getPenghuniPembayaran() 
