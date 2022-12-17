@@ -12,6 +12,27 @@ class pembayaranModel extends Model
     protected $useAutoIncrement = true;
     protected $allowedFields = ['id_pemesanan', 'transfer_via', 'bukti', 'status_pembayaran'];
 
+    //untuk menghitung jumlah yang telah penghuni bayar, akan ditampilkan di halaman penghuni
+    public function getCount() 
+    {
+        $builder = $this->db->table('pembayaran');
+        $builder->select('count(pembayaran.id_pemesanan) as countid, durasi');
+        $builder->join('pemesanan','pembayaran.id_pemesanan=pemesanan.id_pemesanan');
+        $builder->where('id_penghuni', user()->id);
+        $query = $builder->get();
+        return $query->getResult(); 
+    }
+
+    public function getPembayaranPenghuni() //untuk ditampilkan pada halaman penghuni
+    {
+        $builder = $this->db->table('pembayaran');
+        $builder->select('id_pembayaran, pembayaran.id_pemesanan as id, transfer_via, bukti, status_pembayaran, nama_kamar, harga_kamar, durasi, pembayaran.created_at as tanggal_pembayaran');
+        $builder->join('pemesanan','pembayaran.id_pemesanan=pemesanan.id_pemesanan');
+        $builder->join('kamar','pemesanan.id_kamar=kamar.id_kamar');
+        $builder->where('id_penghuni', user()->id);
+        $query = $builder->get();
+        return $query->getResult();
+    }
 
     public function getPenghuniPembayaran() 
     {

@@ -76,7 +76,9 @@ class Penghuni extends BaseController
         $data = [
             'title' => 'Index Pembayaran',
             'validation' => \Config\Services::validation(),
-            'id_pemesanan' => $this->pemesanan->getForm()
+            'id_pemesanan' => $this->pemesanan->getForm(),
+            'pembayaran' => $this->pembayaran->getPembayaranPenghuni(),
+            'count' => $this->pembayaran->getCount()
         ];
         return view('user/penghuni/pembayaran_bulanan', $data);
     }
@@ -147,6 +149,69 @@ class Penghuni extends BaseController
             $this->pembayaran->insert($data);  
             
             session()->setFlashdata('success','Berhasil mengirimkan bukti pembayaran! Silakan menunggu verifikasi ibu kost!');
+            return redirect()->to('/bayarbulanan')->withInput();
+        }
+        return view('/bayarbulanan');
+    }
+    
+    public function editbayar($id)
+    {   
+        $validasi = !$this->validate([
+            'id_pemesanan' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'id pemesanan harus diisi'
+                ]
+            ],
+        
+            'bukti' => [
+                'rules' => 'uploaded[bukti]|max_size[bukti,5120]|ext_in[bukti,png,jpg,jpeg]|mime_in[bukti,image/jpg,image/jpeg,image/png]',
+                'errors' => [
+                    'uploaded' => 'file harus diisi',
+                    'max_size' => 'ukuran file terlalu besar',
+                    'ext_in' => 'file harus berformat jpg/jpeg/png',
+                    'mime_in' => 'file harus berformat jpg/jpeg/png'
+                ]
+            ],
+
+            'transfer_via' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'harga kamar harus diisi'
+                ]
+            ],
+
+            'status_pembayaran' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'status pembayaran harus diisi'
+                ]
+            ],
+            
+        ]);
+        
+        if($validasi){
+            session()->setFlashdata('error','Mohon cek kembali data Anda!');
+            return redirect()->to('/bayarbulanan')->withInput();
+        } 
+        
+        else{
+
+            $file_bukti = $this->request->getFile('bukti');
+            $nama_file = $file_bukti->getRandomName();
+
+            $data = [
+                'id_pembayaran' => $id,
+                'id_pemesanan' => $this->request->getVar('id_pemesanan'),
+                'bukti' => $nama_file,
+                'transfer_via' => $this->request->getVar('transfer_via'),
+                'status_pembayaran' => $this->request->getVar('status_pembayaran'),
+            ];
+
+            $file_bukti->move('pembayaran', $nama_file);
+            $this->pembayaran->save($data);  
+            
+            session()->setFlashdata('success','Berhasil mengedit bukti pembayaran! Silakan menunggu verifikasi ibu kost!');
             return redirect()->to('/bayarbulanan')->withInput();
         }
         return view('/bayarbulanan');
