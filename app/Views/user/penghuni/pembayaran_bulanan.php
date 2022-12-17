@@ -4,24 +4,35 @@
                 
 <div class="page-heading">
     <div class="page-title">
+
+        <!-- flash data -->
+        <?php if(session()->getFlashdata('success')) : ?>
         <div class="row">
             <div class="col-12 col-md-12">
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                     <i class="bi bi-check-circle"></i> 
-                    here alert
+                    <?= session()->getFlashdata('success'); ?>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             </div>
         </div>
+        <?php elseif(session()->getFlashdata('error')): ?>
+        <div class="row">
+            <div class="col-12 col-md-12">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <i class="bi bi-file-excel"></i>
+                    <?= session()->getFlashdata('error'); ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+        <?php endif; ?>
+        <!-- end flash data -->
+
         <div class="row">
             <div class="col-12 col-md-6 order-md-1 order-last">
                 <h3>Data Pembayaran Bulanan</h3>
             </div>
-            <!-- <div class="col-12 col-md-6 order-md-2 order-first">
-                <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
-                    <a href="#" class="btn icon icon-left btn-primary"><i data-feather="edit"></i>Tambah Pembayaran</a>
-                </nav>
-            </div> -->
         </div>
     </div>
     <section class="section">
@@ -74,7 +85,7 @@
                                     <i data-feather="x"></i>
                                 </button>
                             </div>
-                            <form action="#" method="post">
+                            <form action="/bayar" method="post" enctype="multipart/form-data">
                             <?= csrf_field(); ?>
                                 <div class="modal-body">
                                     <!-- id pemesanan -->
@@ -99,11 +110,10 @@
                                     <!-- gambar / bukti pembayaran -->
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <label for="bukti_pembayaran">Bukti Pembayaran</label>
-                                            <input type="file" id="bukti_pembayaran" class="form-control <?= ($validation->hasError('bukti_pembayaran')) ? 'is-invalid' : '' ?>"
-                                                name="bukti_pembayaran" value="<?= old('bukti_pembayaran'); ?>">
+                                            <label>Bukti Pembayaran</label>
+                                            <input type="file" name="bukti" class="form-control <?= ($validation->hasError('bukti')) ? 'is-invalid' : '' ?>">
                                             <div class="invalid-feedback">
-                                                <?= $validation->getError('bukti_pembayaran')?>
+                                                <?= $validation->getError('bukti')?>
                                             </div>
                                         </div>
                                     </div>
@@ -120,7 +130,7 @@
                                     <button type="submit" class="btn btn-primary ml-1"
                                         data-bs-dismiss="modal">
                                         <i class="bx bx-check d-block d-sm-none"></i>
-                                        <span class="d-none d-sm-block">Ajukan Pesanan</span>
+                                        <span class="d-none d-sm-block">Bayar Sekarang</span>
                                     </button>
                                 </div>
                             </form>

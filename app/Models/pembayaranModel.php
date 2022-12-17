@@ -10,7 +10,7 @@ class pembayaranModel extends Model
     protected $primaryKey = 'id_pembayaran';
     protected $useTimestamps = true;
     protected $useAutoIncrement = true;
-    protected $allowedFields = ['id_pemesanan', 'bukti_pembayaran', 'transfer_via', 'status_pembayaran'];
+    protected $allowedFields = ['id_pemesanan', 'transfer_via', 'bukti', 'status_pembayaran'];
 
 
     public function getPenghuniPembayaran() 

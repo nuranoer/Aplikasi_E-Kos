@@ -64,8 +64,9 @@ $routes->get('/detailpembayaran-(:num)', 'Pembayaran::detail/$1', ['filter' => '
 // Penghuni
 $routes->post('/pesan', 'Penghuni::pesan', ['filter' => 'role:penghuni']);
 $routes->get('/riwayat', 'Penghuni::riwayat', ['filter' => 'role:penghuni']);
-$routes->get('/pembayaran', 'Penghuni::pembayaran', ['filter' => 'role:penghuni']);
+$routes->get('/bayarbulanan', 'Penghuni::bayarbulanan', ['filter' => 'role:penghuni']);
 $routes->get('/formpembayaran', 'Penghuni::formpembayaran', ['filter' => 'role:penghuni']);
+$routes->post('/bayar', 'Penghuni::bayar', ['filter' => 'role:penghuni']);
 
 
 
