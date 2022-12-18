@@ -54,7 +54,7 @@
                             <a href="/datapemesanan">Data Pemesanan Kamar</a>
                         </li>
                         <li class="submenu-item">
-                            <a href="/datapembayaran">Pembayaran Bulanan</a>
+                            <a href="/indexpembayaran">Pembayaran Bulanan</a>
                         </li>
                     </ul>
                 </li>

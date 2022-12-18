@@ -13,13 +13,14 @@
     <section class="section">
         <div class="card">
             <div class="card-body">
-                <table class="table table-striped" id="table1">
+                <table class="table table-striped table-responsive" id="table1">
                     <thead>
                         <tr>
                             <th>No</th>
                             <th>Fullname</th>
                             <th>Username</th>
                             <th>Email</th>
+                            <th>No Hp</th>
                             <th>Status</th>
                             <th>Aksi</th>
                         </tr>
@@ -32,6 +33,7 @@
                             <td><?= $row->fullname; ?></td>
                             <td><?= $row->username; ?></td>
                             <td><?= $row->email; ?></td>
+                            <td><?= $row->no_hp; ?></td>
                             <td>
                                 <span class="badge bg-success">Verified</span>
                             </td>

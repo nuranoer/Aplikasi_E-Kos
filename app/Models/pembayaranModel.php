@@ -23,7 +23,8 @@ class pembayaranModel extends Model
         return $query->getResult(); 
     }
 
-    public function getPembayaranPenghuni() //untuk ditampilkan pada halaman penghuni
+    //untuk ditampilkan pada halaman penghuni
+    public function getPembayaranPenghuni() 
     {
         $builder = $this->db->table('pembayaran');
         $builder->select('id_pembayaran, pembayaran.id_pemesanan as id, transfer_via, bukti, status_pembayaran, nama_kamar, harga_kamar, durasi, pembayaran.created_at as tanggal_pembayaran');
@@ -34,22 +35,28 @@ class pembayaranModel extends Model
         return $query->getResult();
     }
 
+    //function yang akan ditampilkan pada halaman admin (pembayaran bulanan)
     public function getPenghuniPembayaran() 
     {
-    	$builder = $this->db->table('pemesanan');
-        $builder->select('id_pemesanan, id_penghuni, username, fullname, user_image, durasi');
+    	$builder = $this->db->table('pembayaran');
+        $builder->select('id_penghuni, username, fullname, user_image, durasi, count(id_pembayaran) as yg_dibayarkan, nama_kamar, harga_kamar, harga_kamar*count(id_pembayaran) as jumlah_saat_ini');
+        $builder->join('pemesanan','pembayaran.id_pemesanan=pemesanan.id_pemesanan');
+        $builder->join('kamar','pemesanan.id_kamar=kamar.id_kamar');
         $builder->join('users','pemesanan.id_penghuni=users.id');
         $builder->where('pemesanan.status','disetujui');
+        $builder->groupBy('id_penghuni');
         $query = $builder->get();
         return $query->getResult();
     }
 
+    //function yang akan ditampilkan pada halaman admin (detail pembayaran bulanan penghuni)
     public function getDetailPembayaran($id)
     {
-        $builder = $this->db->table('pemesanan');
-        $builder->select('id_pemesanan, id_penghuni, username, fullname, durasi');
+        $builder = $this->db->table('pembayaran');
+        $builder->select('username, fullname, bukti, transfer_via, status_pembayaran, nama_kamar, harga_kamar, durasi, pembayaran.created_at as tanggal_pembayaran');
+        $builder->join('pemesanan','pembayaran.id_pemesanan=pemesanan.id_pemesanan');
+        $builder->join('kamar','pemesanan.id_kamar=kamar.id_kamar');
         $builder->join('users','pemesanan.id_penghuni=users.id');
-        $builder->where('pemesanan.status','disetujui');
         $builder->where('id_penghuni',$id);
         $query = $builder->get();
         return $query->getResult();

@@ -19,10 +19,19 @@ class Pembayaran extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'Data Pembayaran',
+            'title' => 'Index Pembayaran',
             'data' => $this->pembayaran->getPenghuniPembayaran(),
         ];
         return view('user/admin/datapembayaran/index', $data);
+    }
+    
+    public function pembayaranpenghuni()
+    {
+        $data = [
+            'title' => 'Data Pembayaran Penghuni',
+            'data' => $this->pembayaran->getPenghuniPembayaran(),
+        ];
+        return view('user/admin/datapembayaran/list', $data);
     }
 
     public function detail($id)

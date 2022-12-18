@@ -8,26 +8,49 @@
             <div class="col-12 col-md-6 order-md-1 order-last">
                 <h3>Data Pembayaran Bulanan</h3>
             </div>
+            <div class="col-12 col-md-6 order-md-2 order-first">
+                <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+                    <a href="/pembayaranpenghuni" class="btn icon icon-left btn-info"><i data-feather="info"></i>Detail per Penghuni</a>
+                </nav>
+            </div>
         </div>
     </div>
-    <section class="row">
-      <?php foreach ($data as $d): ?>
-        <div class="col-12 col-lg-6">
-          <div class="card">
-            <div class="card-body py-4 px-4">
-              <div class="d-flex align-items-center">
-                <div class="avatar avatar-xl">
-                  <img src="assets/images/faces/<?= $d->user_image; ?>" alt="Gambar Penghuni" />
-                </div>
-                <div class="ms-3 name">
-                  <a href="/detailpembayaran-<?= $d->id_penghuni; ?>"><h5 class="font-bold text-primary"><?= $d->fullname; ?> (1/<?= $d->durasi; ?>)</h5></a>
-                  <h6 class="text-muted mb-0">@<?= $d->username; ?></h6>
-                </div>
-              </div>
+    <section class="section">
+        <div class="card">
+            <div class="card-body">
+                <table class="table table-striped" id="table1">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Penghuni</th>
+                            <th>Kamar</th>
+                            <th>Pembayaran</th>
+                            <th>Jumlah</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php $no=1; ?>
+                        <?php foreach($data as $d): ?>
+                        <tr>
+                            <td><?= $no++; ?></td>
+                            <td><?= $d->fullname; ?></td>
+                            <td><b><?= $d->nama_kamar; ?></b> (Rp. <?= $d->harga_kamar; ?>)</td>
+                            <td><?= $d->yg_dibayarkan; ?> / <?= $d->durasi; ?></td>
+                            <td>Rp. <?= $d->jumlah_saat_ini; ?></td>
+                            <td>
+                                <?php if($d->yg_dibayarkan == $d->durasi): ?>
+                                <span class="badge bg-success">Lunas</span>
+                                <?php else: ?>
+                                <span class="badge bg-danger">Belum Lunas</span>
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
             </div>
-          </div>
         </div>
-      <?php endforeach; ?>
     </section>
 </div>
 
