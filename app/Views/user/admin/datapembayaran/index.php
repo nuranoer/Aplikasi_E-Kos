@@ -48,6 +48,12 @@
                         </tr>
                         <?php endforeach; ?>
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4">Total</td>
+                            <td>Rp. (Total)</td>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
         </div>

@@ -35,7 +35,7 @@ class pembayaranModel extends Model
         return $query->getResult();
     }
 
-    //function yang akan ditampilkan pada halaman admin (pembayaran bulanan)
+    //function yang akan ditampilkan pada halaman admin (index pembayaran bulanan)
     public function getPenghuniPembayaran() 
     {
     	$builder = $this->db->table('pembayaran');
@@ -58,6 +58,17 @@ class pembayaranModel extends Model
         $builder->join('kamar','pemesanan.id_kamar=kamar.id_kamar');
         $builder->join('users','pemesanan.id_penghuni=users.id');
         $builder->where('id_penghuni',$id);
+        $query = $builder->get();
+        return $query->getResult();
+    }
+    
+    //function yang akan ditampilkan pada halaman admin (detail pembayaran bulanan penghuni)
+    public function getTotalPembayaran()
+    {
+        $builder = $this->db->table('pembayaran');
+        $builder->select('username, fullname, bukti, transfer_via, status_pembayaran, nama_kamar, harga_kamar, durasi, pembayaran.created_at as tanggal_pembayaran');
+        $builder->join('pemesanan','pembayaran.id_pemesanan=pemesanan.id_pemesanan');
+        $builder->join('kamar','pemesanan.id_kamar=kamar.id_kamar');
         $query = $builder->get();
         return $query->getResult();
     }
