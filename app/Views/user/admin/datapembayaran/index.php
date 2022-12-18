@@ -18,7 +18,7 @@
     <section class="section">
         <div class="card">
             <div class="card-body">
-                <table class="table table-striped" id="table1">
+                <table class="table table-striped" id="dataTables">
                     <thead>
                         <tr>
                             <th>No</th>
