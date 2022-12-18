@@ -13,7 +13,7 @@
     <section class="section">
         <div class="card">
             <div class="card-body">
-                <table class="table table-striped table-responsive" id="table1">
+                <table id="dataTables" class="table table-striped table-responsive" id="table1">
                     <thead>
                         <tr>
                             <th>No</th>
