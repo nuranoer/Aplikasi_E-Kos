@@ -14,6 +14,22 @@
 		</div>
 	</div>
 </div>
+<!-- Peraturan -->
+<div class="untree_co-section" id="peraturanKost">
+	<div class="container">
+		<div class="row mb-5 justify-content-center">
+			<div class="col-lg-6 text-center">
+				<h2 class="section-title text-center mb-3">Peraturan / Kebijakan pada Kost Anisa</h2>
+			</div>
+		</div>
+		<p class="mb-0 text-center">1. Dilarang Merokok dan memimun minuman keras</p>
+		<p class="mb-0 text-center">2. Dilarang membawa hewan</p>
+		<p class="mb-0 text-center">3. Dilarang membawa laki-laki</p>
+		<p class="mb-0 text-center">4. Anak Kos Harus sudah kembali ke kos tidak lebih dari pukul 21:30. jika ternyata melebihi batas waktu harus memberitahukan kepada pemilik kost (SMS/Telepon)</p>
+		<p class="mb-0 text-center">5. Batas Waktu Terima Tamu Hingga pukul 21:30 WIB</p>
+	</div>
+</div>
+<!-- Akhir Peraturan -->
 
 <!-- Kamar yang Tersedia -->
 <div class="untree_co-section" id="kamarTersedia">

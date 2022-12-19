@@ -9,6 +9,7 @@
                 <li class="has-children active">
                     <a href="/info">SEPUTAR KOST</a>
                     <ul class="dropdown">
+                        <li><a href="/info#peraturanKost">Peraturan Kost Anisa</a></li>
                         <li><a href="/info#kamarTersedia">Kamar yang Tersedia</a></li>
                         <li><a href="/info#layananKamar">Layanan Kamar</a></li>
                         <!-- <li class="has-children">
