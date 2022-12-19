@@ -26,6 +26,16 @@
                 </div>
             </div>
         </div>
+        <?php elseif(session()->getFlashdata('hapus')): ?>
+        <div class="row">
+            <div class="col-12 col-md-12">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <i class="bi bi-file-excel"></i>
+                    <?= session()->getFlashdata('hapus'); ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
         <?php endif; ?>
         <!-- end flash data -->
 
@@ -60,7 +70,11 @@
                             <td><?= $row->email; ?></td>
                             <td><?= $row->no_hp; ?></td>
                             <td>
+                                <?php if(empty($row->deleted_at)): ?>
                                 <span class="badge bg-success">Verified</span>
+                                <?php else: ?>
+                                <span class="badge bg-danger">Inactive</span>
+                                <?php endif; ?>
                             </td>
                             <td>
                                 <!-- btn edit -->
@@ -91,8 +105,8 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                               <b>Apakah anda yakin menghapus data penghuni <?= $row->username; ?>? <br>
-                               Data yang sudah dihapus tidak dapat dikembalikan.</b>
+                               <b>Apakah anda yakin ingin menon-aktifkan akun <?= $row->username; ?>? <br>
+                               Data yang sudah dinon-aktifkan tidak dapat dikembalikan.</b>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-light-secondary"
@@ -100,9 +114,17 @@
                                     <i class="bx bx-x d-block d-sm-none"></i>
                                     <span class="d-none d-sm-block">Cancel</span>
                                 </button>
+                                <!-- <form action="/deletepenghuni/<?= $row->userid; ?>" method="post">
+                                <?= csrf_field(); ?>
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button class="btn btn-danger ml-1">
+                                        <i class="bx bx-check d-block d-sm-none"></i>
+                                        <span class="d-none d-sm-block">Delete it!</span>
+                                    </button>
+                                </form> -->
                                 <a href="/deletepenghuni/<?= $row->userid; ?>" type="button" class="btn btn-danger ml-1">
                                     <i class="bx bx-check d-block d-sm-none"></i>
-                                    <span class="d-none d-sm-block">Delete it!</span>
+                                    <span class="d-none d-sm-block">Inactive it!</span>
                                 </a>
                             </div>
                         </div>

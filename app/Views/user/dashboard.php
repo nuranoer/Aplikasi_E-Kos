@@ -109,7 +109,7 @@
       <section class="row">
         <div class="col-12 col-lg-12">
           <div class="row">
-            <div class="col-6 col-lg-4 col-md-6">
+            <!-- <div class="col-6 col-lg-4 col-md-6">
               <div class="card">
                 <div class="card-body px-4 py-4-5">
                   <div class="row">
@@ -129,8 +129,8 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-6 col-lg-4 col-md-6">
+            </div> -->
+            <div class="col-6 col-lg-6 col-md-6">
               <div class="card">
                 <div class="card-body px-4 py-4-5">
                   <div class="row">
@@ -155,7 +155,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-6 col-lg-4 col-md-6">
+            <div class="col-6 col-lg-6 col-md-6">
               <div class="card">
                 <div class="card-body px-4 py-4-5">
                   <div class="row">
@@ -215,7 +215,10 @@
                 <h4>Dashboard</h4>
               </div>
               <div class="card-body">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis inventore eveniet voluptatibus voluptatem. Perspiciatis excepturi doloribus, ducimus iure laborum laudantium, quasi corrupti, atque quisquam nesciunt quos a eum quam explicabo? Molestiae sed, laborum natus reprehenderit sunt nemo corporis vitae dolorem at quod tenetur. Alias, atque. Assumenda, placeat. Deserunt hic laborum magnam porro accusamus aspernatur reprehenderit veniam voluptate, culpa possimus natus odio voluptatibus molestias ducimus ipsum atque commodi, illum animi corporis delectus, dignissimos ex! Voluptates ullam possimus nesciunt, quis exercitationem dolores facilis, adipisci saepe odit aspernatur illo soluta obcaecati rerum nisi officiis nobis reprehenderit excepturi! Excepturi necessitatibus corrupti vero obcaecati vitae eveniet ad earum, dicta nam inventore adipisci asperiores, iusto eligendi beatae nemo enim iste nesciunt error voluptatum nobis, quos repellat? Qui porro neque sapiente cupiditate recusandae suscipit reiciendis vero, beatae doloribus numquam repellendus quis odio odit dolor accusantium sed ducimus ullam accusamus inventore tenetur illo, adipisci sit alias. Necessitatibus, error.</p>
+                <p>
+                  Selamat datang di dashboard penghuni. Silahkan pilih menu di sebelah kiri untuk melihat informasi lebih lanjut! <br>
+                  Untuk informasi lebih lanjut, silahkan hubungi ibu kost WA 085731872656
+                </p>
               </div>
             </div>
           </div>

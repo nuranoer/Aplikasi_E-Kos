@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 use \App\Models\pemesananModel;
-
+use Exception;
 class Admin extends BaseController
 {
     protected $dataModel;
@@ -94,13 +94,31 @@ class Admin extends BaseController
 
     public function deletepenghuni($id)
     {
-        // $data = $this->dataModel->find($id);
+        // try{
+        //     $this->dataModel->delete($id);
+        // } catch(Exception $e){
+        //     return redirect()->to('/datapenghuni');
+        // }
+        // return redirect()->to('/datapenghuni');
+
+        // $data = [
+        //     'id' => $id,
+        //     'userid' => $this->request->getVar('userid'),
+        // ];
         // $gambar = $data->user_image;
         // if(file_exists('assets/images/faces/'.$gambar)){
         //     unlink('assets/images/faces/'.$gambar);
         // }
-        $this->dataModel->delete($id);
-        return redirect()->back();
+        // if(!$data){
+        //     session()->setFlashdata('hapus','gagal data penghuni!');
+        //     return redirect()->to('/datapenghuni');
+        // }
+        // else {
+            $this->dataModel->delete($id);
+            return redirect()->to('/datapenghuni');
+        // }
+        // $this->db->table('users')->where(['id' => $id])->delete();
+        // return redirect()->back();
     }
     
     public function datapemesanan()
