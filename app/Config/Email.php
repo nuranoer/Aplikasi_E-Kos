@@ -47,28 +47,28 @@ class Email extends BaseConfig
      *
      * @var string
      */
-    public $SMTPHost = 'smtp.googlemail.com';
+    public $SMTPHost = 'smtp.mailtrap.io';
 
     /**
      * SMTP Username
      *
      * @var string
      */
-    public $SMTPUser = 'adine.pramesti@gmail.com';
+    public $SMTPUser = '762c4925e11e0d';
 
     /**
      * SMTP Password
      *
      * @var string
      */
-    public $SMTPPass = 'vmdduvhjfqapwppn';
+    public $SMTPPass = '659d1ac9ae7615';
 
     /**
      * SMTP Port
      *
      * @var int
      */
-    public $SMTPPort = 465;
+    public $SMTPPort = 2525;
 
     /**
      * SMTP Timeout (in seconds)

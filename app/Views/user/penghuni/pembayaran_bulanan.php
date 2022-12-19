@@ -38,9 +38,12 @@
     <section class="section">
         <div class="card">
             <div class="card-body">
-                <?php if($count[0]->countid != $count[0]->durasi ): ?>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#inlineForm"><i data-feather="edit"></i> Tambah Pembayaran</button>
+                <?php if(empty($id_pemesanan)): ?>
                 <?php else: ?>
+                    <?php if($count[0]->countid != $count[0]->durasi): ?>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#inlineForm"><i data-feather="edit"></i> Tambah Pembayaran</button>
+                    <?php else: ?>
+                    <?php endif; ?>
                 <?php endif; ?>
                 <button class="btn icon btn-danger btn-detail"  type="button" data-bs-toggle="modal" data-bs-target="#info"><i data-feather="info"></i> Info Pembayaran</button>
                 <div class="table-responsive">
