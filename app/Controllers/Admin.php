@@ -30,6 +30,79 @@ class Admin extends BaseController
         return view('user/admin/datapenghuni/index', $data);
     }
     
+    public function editpenghuni($id)
+    {
+        $validasi = !$this->validate([
+            'username' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'username harus diisi'
+                ]
+            ],
+
+            'fullname' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'nama lengkap harus diisi'
+                ]
+            ],
+            
+            'email' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'email harus diisi'
+                ]
+            ],
+
+            'no_hp' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'no hp harus diisi'
+                ]
+            ],
+            
+            'alamat' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'alamat harus diisi'
+                ]
+            ],
+            
+        ]);
+        
+        if($validasi){
+            session()->setFlashdata('error','Mohon cek kembali data Anda!');
+            return redirect()->to('/datapenghuni')->withInput();
+        } 
+        
+        else{
+
+            $data = [
+                'id' => $id,
+                'username' => $this->request->getVar('username'),
+                'fullname' => $this->request->getVar('fullname'),
+                'email' => $this->request->getVar('email'),
+                'no_hp' => $this->request->getVar('no_hp'),
+                'alamat' => $this->request->getVar('alamat')
+            ];
+
+            $this->dataModel->save($data);  
+            session()->setFlashdata('success','Berhasil mengedit data penghuni!');
+            return redirect()->to('/datapenghuni')->withInput();
+        }
+    }
+
+    public function deletepenghuni($id)
+    {
+        // $data = $this->dataModel->find($id);
+        // $gambar = $data->user_image;
+        // if(file_exists('assets/images/faces/'.$gambar)){
+        //     unlink('assets/images/faces/'.$gambar);
+        // }
+        $this->dataModel->delete($id);
+        return redirect()->back();
+    }
+    
     public function datapemesanan()
     {
         $data = [

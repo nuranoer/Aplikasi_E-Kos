@@ -49,6 +49,8 @@ $routes->post('/updateprofile/(:num)', 'User::updateprofile/$1', ['filter' => 'r
 // Admin
 $routes->get('/admin', 'Admin::index', ['filter' => 'role:admin']);
 $routes->get('/datapenghuni', 'Admin::datapenghuni', ['filter' => 'role:admin']);
+$routes->post('/editpenghuni/(:num)', 'Admin::editpenghuni/$1', ['filter' => 'role:admin']);
+$routes->get('/deletepenghuni/(:num)', 'Admin::deletepenghuni/$1', ['filter' => 'role:admin']);
 $routes->get('/datakamar', 'Kamar::datakamar', ['filter' => 'role:admin']);
 $routes->get('/formkamar', 'Kamar::formkamar', ['filter' => 'role:admin']);
 $routes->post('/store', 'Kamar::store', ['filter' => 'role:admin']);
