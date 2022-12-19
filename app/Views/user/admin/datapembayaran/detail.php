@@ -4,6 +4,31 @@
                 
 <div class="page-heading">
     <div class="page-title">
+
+        <!-- flash data -->
+        <?php if(session()->getFlashdata('success')) : ?>
+        <div class="row">
+            <div class="col-12 col-md-12">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <i class="bi bi-check-circle"></i> 
+                    <?= session()->getFlashdata('success'); ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+        <?php elseif(session()->getFlashdata('error')): ?>
+        <div class="row">
+            <div class="col-12 col-md-12">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <i class="bi bi-file-excel"></i>
+                    <?= session()->getFlashdata('error'); ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+        <?php endif; ?>
+        <!-- end flash data -->
+
         <div class="row">
             <div class="col-12 col-md-12 order-md-1 order-last">
                 <?php if(empty($data[0]->fullname)): ?>
@@ -45,20 +70,20 @@
                             </td>
                             <td>
                                 <!-- btn edit -->
-                                <a href="#" class="btn icon btn-warning"><i class="bi bi-pencil"></i></a>
+                                <button class="btn icon btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#formEdit<?= $d->id_pembayaran; ?>"><i class="bi bi-pencil"></i></button>
                                 <!-- btn detail using modal -->
-                                <button class="btn icon btn-primary"  type="button" data-bs-toggle="modal" data-bs-target="#modalDetail"><i class="bi bi-info-circle"></i></button>
+                                <button class="btn icon btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalDetail<?= $d->id_pembayaran; ?>"><i class="bi bi-info-circle"></i></button>
                             </td>
                         </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
 
-                <!-- form edit -->
                 <?php foreach ($data as $d): ?>
-                <div class="modal fade text-left" id="formEdit" tabindex="-1" role="dialog"
+                <!-- form edit -->
+                <div class="modal fade text-left" id="formEdit<?= $d->id_pembayaran; ?>" tabindex="-1" role="dialog"
                     aria-labelledby="myModalLabel33" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+                    <div class="modal-dialog modal-dialog-scrollable"
                         role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -68,20 +93,15 @@
                                     <i data-feather="x"></i>
                                 </button>
                             </div>
-                            <form action="/editbayar/<?= $d->id_pembayaran; ?>" method="post" enctype="multipart/form-data">
+                            <form action="/editpembayaran/<?= $d->id_pembayaran; ?>" method="post" enctype="multipart/form-data">
                             <?= csrf_field(); ?>
                                 <div class="modal-body">
-                                    <!-- id pemesanan -->
-                                    <?php if(empty($d->id)): ?>
-                                    <input type="hidden" value="-" class="form-control" name="id_pemesanan">
-                                    <?php else: ?>
-                                    <input type="hidden" value="<?= $d->id; ?>" class="form-control" name="id_pemesanan">
-                                    <?php endif; ?>
+                                    <input type="hidden" value="<?= $d->id_penghuni; ?>" class="form-control" name="id_penghuni">
                                     <!-- transfer -->
                                     <div class="col-12">
                                         <fieldset class="form-group">
                                             <label>Transfer Via:</label>
-                                            <select class="form-select" name="transfer_via" id="transfer_via">
+                                            <select class="form-select" name="transfer_via" id="transfer_via" aria-readonly="readonly">
                                                 <option value="BRI" <?= $d->transfer_via == 'BRI'? 'selected':''?>>BRI</option>
                                                 <option value="BNI" <?= $d->transfer_via == 'BNI'? 'selected':''?>>BNI</option>
                                                 <option value="BCA" <?= $d->transfer_via == 'BCA'? 'selected':''?>>BCA</option>
@@ -90,18 +110,17 @@
                                             </select>
                                         </fieldset>
                                     </div>
-                                    <!-- gambar / bukti pembayaran -->
+                                    <!-- Status -->
                                     <div class="col-12">
-                                        <div class="form-group">
-                                            <label>Bukti Pembayaran</label>
-                                            <input type="file" name="bukti" class="form-control <?= ($validation->hasError('bukti')) ? 'is-invalid' : '' ?>">
-                                            <div class="invalid-feedback">
-                                                <?= $validation->getError('bukti')?>
-                                            </div>
-                                        </div>
+                                        <fieldset class="form-group">
+                                            <label>Status:</label>
+                                            <select class="form-select" name="status_pembayaran" id="status_pembayaran">
+                                                <option value="Diterima" <?= $d->status_pembayaran == 'Diterima'? 'selected':''?>>Diterima</option>
+                                                <option value="Ditolak" <?= $d->status_pembayaran == 'Ditolak'? 'selected':''?>>Ditolak</option>
+                                                <option value="Menunggu Verifikasi" <?= $d->status_pembayaran == 'Menunggu Verifikasi'? 'selected':''?>>Menunggu Verifikasi</option>
+                                            </select>
+                                        </fieldset>
                                     </div>
-                                    <!-- status pembayaran -->
-                                    <input type="hidden" value="<?= $d->status_pembayaran; ?>" class="form-control" name="status_pembayaran">
                                     
                                 </div>
                                 <div class="modal-footer">
@@ -121,10 +140,10 @@
                     </div>
                 </div>
                 <?php endforeach; ?>
-
+                
                 <!-- detail pembayaran -->
                 <?php foreach ($data as $d): ?>
-                <div class="modal fade" id="modalDetail" tabindex="-1" role="dialog"
+                <div class="modal fade" id="modalDetail<?= $d->id_pembayaran; ?>" tabindex="-1" role="dialog"
                     aria-labelledby="nama_kamar" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-scrollable" role="document">
                         <div class="modal-content">

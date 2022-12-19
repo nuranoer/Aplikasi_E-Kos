@@ -61,6 +61,7 @@ $routes->post('/editpemesanan/(:num)', 'Admin::editpemesanan/$1', ['filter' => '
 $routes->get('/indexpembayaran', 'Pembayaran::index', ['filter' => 'role:admin']);
 $routes->get('/pembayaranpenghuni', 'Pembayaran::pembayaranpenghuni', ['filter' => 'role:admin']);
 $routes->get('/detailpembayaran-(:num)', 'Pembayaran::detail/$1', ['filter' => 'role:admin']);
+$routes->post('/editpembayaran/(:num)', 'Pembayaran::editpembayaran/$1', ['filter' => 'role:admin']);
 
 // Penghuni
 $routes->post('/pesan', 'Penghuni::pesan', ['filter' => 'role:penghuni']);

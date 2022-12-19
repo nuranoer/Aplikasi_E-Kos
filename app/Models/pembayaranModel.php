@@ -53,7 +53,7 @@ class pembayaranModel extends Model
     public function getDetailPembayaran($id)
     {
         $builder = $this->db->table('pembayaran');
-        $builder->select('username, fullname, bukti, transfer_via, status_pembayaran, nama_kamar, harga_kamar, durasi, pembayaran.created_at as tanggal_pembayaran');
+        $builder->select('id_pembayaran, id_penghuni, username, fullname, bukti, transfer_via, status_pembayaran, nama_kamar, harga_kamar, durasi, pembayaran.created_at as tanggal_pembayaran');
         $builder->join('pemesanan','pembayaran.id_pemesanan=pemesanan.id_pemesanan');
         $builder->join('kamar','pemesanan.id_kamar=kamar.id_kamar');
         $builder->join('users','pemesanan.id_penghuni=users.id');

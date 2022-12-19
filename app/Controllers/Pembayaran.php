@@ -39,8 +39,51 @@ class Pembayaran extends BaseController
         $data = [
             'title' => 'Detail Pembayaran',
             'data' => $this->pembayaran->getDetailPembayaran($id),
+            'validation' => \Config\Services::validation()
         ];
         return view('user/admin/datapembayaran/detail', $data);
+    }
+
+    public function editpembayaran($id)
+    {  
+        $id_penghuni = $this->request->getVar('id_penghuni');
+
+        $validasi = !$this->validate([
+            'transfer_via' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'jenis transfer harus diisi'
+                ]
+            ],
+
+            'status_pembayaran' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'status pembayaran harus diisi'
+                ]
+            ],
+            
+        ]);
+        
+        if($validasi){
+            session()->setFlashdata('error','Mohon cek kembali data Anda!');
+            return redirect()->to('/detailpembayaran-'.$id_penghuni)->withInput();
+        } 
+        
+        else{
+
+            $data = [
+                'id_pembayaran' => $id,
+                'transfer_via' => $this->request->getVar('transfer_via'),
+                'status_pembayaran' => $this->request->getVar('status_pembayaran'),
+            ];
+
+            $this->pembayaran->save($data);  
+            
+            session()->setFlashdata('success','Berhasil mengedit pembayaran penghuni!');
+            return redirect()->to('/detailpembayaran-'.$id_penghuni)->withInput();
+        }
+        return view('/detailpembayaran-'.$id_penghuni);
     }
 
     // public function new()
